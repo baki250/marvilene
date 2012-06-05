@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<layout>
+   <default>
+      <!-- Your block overrides will go here -->
+           <remove name="left.permanent.callout" />  <!--the dog-->
+           <remove name="right.permanent.callout" />  <!--back to school-->
+           <remove name="catalog.compare.sidebar" />  <!--product compare-->
+           <remove name="paypal.partner.right.logo" />  <!--paypal logo-->
+           <remove name="cart_sidebar" /> <!--cart sidebar-->
+           <remove name="left.reports.product.viewed" /> <!--recently viewed prod-->
+           <remove name="right.reports.product.viewed" /> <!--recently viewed prod-->
+           <remove name="right.reports.product.compared" /> <!--recently compared prod-->
+           <remove name="checkout.cart.coupon" /> <!-- Promo Codes in Cart -->
+		   
+		   
+		  <reference name="footer"> <!--CMS blocks in footer-->
+			<block type="cms/block" name="FooterLinks2" as="FooterLinks2">
+			  <action method="setBlockId"><block_id>footer_links_2</block_id></action>
+			</block>
+				<block type="cms/block" name="FooterLinks3" as="FooterLinks3">
+			  <action method="setBlockId"><block_id>footer_links_3</block_id></action>
+			</block>
+				<block type="cms/block" name="FooterIcons" as="FooterIcons">
+			  <action method="setBlockId"><block_id>footer_icons</block_id></action>
+			</block>
+		  </reference>
+		  
+			<reference name="top.links"> <!-- adds class for top links wishlist -->
+				 <reference name="wishlist_link">                 
+					  <action method="__set">
+							 <name>a_params</name><value>class="top-link-wishlist"</value>
+					  </action>             
+				 </reference>
+			</reference>
+   </default>
+</layout>

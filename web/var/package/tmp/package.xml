@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+    <name>GetSomeMojo_Pinterestmojo</name>
+    <version>1.1.5</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Adds the Pinterest Pin Button to the Product View page.</summary>
+    <description>Increase SEO and your social presence by adding the Pinterest Pin button to your Product View pages. Back-end administration provides easy to use settings which allows you to enable or disable the extension, select how your 'pin count' is displayed and aligned on your page.</description>
+    <notes>- Stable release&#xD;
+- Added Ability to Set Pin It Media Width&#xD;
+- Added Ability to Add Custom CSS Styling&#xD;
+- Added Ability to Show Product Price in Pin Description</notes>
+    <authors><author><name>Mitch Robles, Jr.</name><user>auto-converted</user><email>info@getsomemojo.net</email></author></authors>
+    <date>2012-03-30</date>
+    <time>08:22:26</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="GetSomeMojo_Pinterestmojo.xml" hash="754937eada3236e4628ed37fb4d826d9"/></dir></target><target name="magelocal"><dir name="GetSomeMojo"><dir name="Pinterestmojo"><dir name="Block"><file name="PinterestButton.php" hash="9eab1c62dd3bcb1058ef35a164439e61"/></dir><dir name="Helper"><file name="Data.php" hash="85a5c493fc9c465fc63ee8a585f4fa58"/></dir><dir name="Model"><dir name="Config"><file name="PinCount.php" hash="ad3eacd95ed078ef0fc554819282802f"/></dir></dir><dir name="etc"><file name="config.xml" hash="d3e9a4d2070ea706fc67313df707ebbb"/><file name="system.xml" hash="abec90239b6b81524d088b3c9fa09ae7"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><dir name="getsomemojo"><dir name="pinterestmojo"><file name="pinterest.xml" hash="ab51d23536005c9ab35c77a7a9f106ed"/></dir></dir></dir><dir name="template"><dir name="getsomemojo"><dir name="pinterestmojo"><file name="pinterest_button.phtml" hash="a26e368400396bb0341578cc2567b833"/></dir></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies/>
+</package>

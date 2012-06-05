@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <GetSomeMojo_Pinterestmojo>
+            <version>1.1.4</version>
+        </GetSomeMojo_Pinterestmojo>
+    </modules>
+	<admin>
+      <routers>
+          <getsomemojo_pinterestmojo>
+              <use>admin</use>
+              <args>
+                  <module>GetSomeMojo_Pinterestmojo</module>
+                  <frontName>pinterestmojo</frontName>
+              </args>
+          </getsomemojo_pinterestmojo>
+      </routers>
+    </admin>
+    <global>
+        <blocks>
+            <getsomemojo_pinterestmojo>
+                <class>GetSomeMojo_Pinterestmojo_Block</class>
+            </getsomemojo_pinterestmojo>
+        </blocks>
+		<helpers>
+            <pinterestmojo>
+                <class>GetSomeMojo_Pinterestmojo_Helper</class>
+            </pinterestmojo>
+        </helpers>        
+        <models>
+            <pinterestmojo>
+                <class>GetSomeMojo_Pinterestmojo_Model_Config</class>
+            </pinterestmojo>
+		</models>
+    </global>
+ 
+    <frontend>
+        <layout>
+            <updates>
+                <getsomemojo_pinterestmojo>
+                    <file>getsomemojo/pinterestmojo/pinterest.xml</file>
+                </getsomemojo_pinterestmojo>
+            </updates>
+        </layout>
+    </frontend>
+	
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<pinterestmojosection translate="title" module="pinterestmojo">
+											<title>Pinterest Mojo Developed By Mitch Robles, Jr.</title>
+											<sort_order>13</sort_order>
+										</pinterestmojosection>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<default>
+        <pinterestmojosection>
+            <pinterestmojosettings>
+                <activate>1</activate>
+				<pincount>none</pincount>
+				<pinalign>1</pinalign>
+				<pinstyle>margin: 10px 0 10px;</pinstyle>
+				<pinwidth>800</pinwidth>
+				<pinprice>1</pinprice>
+            </pinterestmojosettings>
+        </pinterestmojosection>
+    </default>
+	
+</config>

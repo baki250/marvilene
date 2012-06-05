@@ -1,0 +1,52 @@
+******* Top Level 0 *******/
+/*top menu bar*/
+ul#pronav {
+    font-size: 11px;
+	font: arial;
+	font-weight: regular;
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0 0 0 0;
+    position: relative;
+    width: 985px;   
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    z-index: 9999;
+    background: #0d0d0d;
+    border-bottom:10px solid #eee;;
+}
+
+
+/*top menu bar separators*/
+ul#pronav li {
+    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/pronav/images/top_nav_separator.gif") no-repeat scroll 0 9px transparent;
+    float: left;
+    padding: 0 0 0 5px;
+}
+/*removes separator from 1st element*/
+ul#pronav li#Furniture {
+    background: none repeat scroll 0 0 transparent;
+    padding: 0;
+	
+}
+
+/*top menu category properties*/
+ul#pronav li a {
+    
+    color: #fff;
+    float: left;
+    font-weight: normal;
+    height: 25px;
+    overflow: hidden;
+    padding: 7px 16px 0 11px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    z-index: 999999;
+}
+/*removes padding on left from 1st element*/
+ul#pronav li#Furniture a {
+    padding: 7px 16px 0 20px;
+}

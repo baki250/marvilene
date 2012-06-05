@@ -1,0 +1,12 @@
+web/var/cache/**/*
+web/var/session/**/*
+web/var/session/*
+web/var/log/*
+web/var/locks/*
+web/var/report/*
+web/var/debug/*
+web/media/catalog/product/cache/**/*
+web/media/js/*
+web/media/css/*.css
+web/errors/local.xml
+web/app/etc/local.xml

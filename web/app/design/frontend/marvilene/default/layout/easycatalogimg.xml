@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    
+    <default>
+        <reference name="head">
+            <action method="addItem" ifconfig="easy_catalogimg/general/enabled"><type>skin_css</type><name>css/easycatalogimg.css</name></action>
+        </reference>
+    </default>    
+    
+    <cms_index_index>
+        <reference name="content">
+            <block type="catalog/navigation" name="catalog.categoriesImgTopNav" before="-">
+                <action method="setTemplate" ifconfig="easy_catalogimg/general/enabled"><template>easycatalogimg/homepage.phtml</template></action>
+            </block>
+        </reference>
+    </cms_index_index>
+       
+    <catalog_category_default>
+        <reference name="category.products">
+            <action method="setTemplate" ifconfig="easy_catalogimg/general/enabled"><template>easycatalogimg/view.phtml</template></action>
+            <block type="catalog/navigation" name="subcategories">
+                <action method="setTemplate" ifconfig="easy_catalogimg/general/enabled"><template>easycatalogimg/subcategories.phtml</template></action>
+            </block>
+        </reference>
+    </catalog_category_default>
+    
+
+    <catalog_category_layered>
+        <reference name="category.products">
+            <action method="setTemplate" ifconfig="easy_catalogimg/general/enabled"><template>easycatalogimg/view.phtml</template></action>
+            <block type="catalog/navigation" name="subcategories">
+                <action method="setTemplate" ifconfig="easy_catalogimg/general/enabled"><template>easycatalogimg/subcategories.phtml</template></action>
+            </block>
+        </reference>
+    </catalog_category_layered>
+    
+</layout>

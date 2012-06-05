@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @version    ${project.version} ${build_date}
+ * @author    RocketTheme http://www.rockettheme.com
+ * @copyright   Copyright (C) 2007 - ${copyright_year} RocketTheme, LLC
+ * @license    http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+ */
+-->
+<layout version="0.1.0">
+	
+    <cms_index_index>
+        <reference name="head">
+            <action method="addItem" ifconfig="homepage_tabs/general/enabled"><type>skin_css</type><name>rokmage-homepagetabs/css/rokmage-homepagetabs.css</name></action>
+        </reference>
+    </cms_index_index>
+
+</layout>

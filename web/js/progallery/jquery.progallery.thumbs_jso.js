@@ -1,0 +1,10 @@
+/**
+ * @author Carlo Tasca @ Brandammo LTD
+ * 
+ * 
+ * Copyright (c) 2010 Carlo Tasca @ Brandammo LTD
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ * 
+ */
+eval((function(x){var d="";var p=0;while(p<x.length){if(x.charAt(p)!="`")d+=x.charAt(p++);else{var l=x.charCodeAt(p+3)-28;if(l>4)d+=d.substr(d.length-x.charCodeAt(p+1)*96-x.charCodeAt(p+2)+3104-l,l);else d+="`";p+=4}}return d})("(function ($) {$.fn.progalleryThumbs = ` <&options) {var o = this;var $o = $(this)` ,!opts = $.extend({}, ` m1.defaults, ` x$;d`!*)x) {console.log(x);};thumbClickHandler` F)e) {$(\"#onpage-image-spinner\").show();$thi`!`!`!q#$li = ` 1!.parent().p` \"#`\"1!c`!o!Index = parseInt($li.find(\"div.i-i\").text());$o.removeClass(\"viewable\");`!1#.add` */.post(opts.mage_baseurl + \"`#:&/ajax/get_product_view\", {pid:` X!` 1$id, ` d!zoom` 5\"` &%, clicked_`#S!_index:`\"C', resize_width` X\"` &(` 7%height` 4)` -\"},`$5'response) {setP`!\\\"Image` 2%.uri);`$J7hide();}, \"json\");};` y%` f,src`%L#` b!\").attr(\"src\", src);}` Q(Fullsize` N3f` 8#`!O\" img` ]1$o.b`%R!`#Y!\", `'%-);if`(t!s.carouselHasPrevAndNext && !` /-agination`!I#more-views-list\")` H\"FredSel({circular`$2\"` b$C` /#, infinite` 2*I` /#, dire`\"w!` 3*D` /$, items` P+tems, scroll:{` //S` 6!` A#effec`%s#` 3*E` 5!, dur`\"P!` 00D` 5#, pauseOnHove`\"A+P` /'}, auto:{play` 8+lay}, prev:{butt`!\",PrevB` 3!, easing` ..E` 3!}, next` Q2Next` K8Next` `#});} else if (`%>.`%b*`$m~`$m~`$m~`$l`#\\%:{contain` _.` ;$`%a3` 7%`%\"1`$4~`$4~`$4~`$4~`*#~`*OR`%d|`%#~`%#~`%#~`%TM});}};$.fn.progalleryThumbs.defaults = {product_id:null, mage_baseurl` '(zoom` )#resize_width:256` )%height` -\"`$5,:true` -&`$4$` (+`$)%:\"left\"` F'`#z!1` '&`#r'` %.`#m\":\"jswing` \\'`#`*:1000` 3&`#U(`!J+Play`!]+PlayDelay:` X'`-t*:fals` H'`-t)` -,`*2&:\"#t`$F!-prev`!s'`*5&:\"easeInOutCubic` :'`*3&` ^&nex`#A(`*6&` `$Quar` 6(`!\\'`!C&` +%` 41` e(OutBounce\"};})(jQuery);"))

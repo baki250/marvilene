@@ -1,0 +1,235 @@
+/******* Top Level 0 *******/
+/*top menu bar*/
+ul#pronav {
+    font-size: 11px;
+	font: arial;
+	font-weight: regular;
+    list-style: none outside none;
+    margin: 0 auto;
+    padding: 0 0 0 0;
+    position: relative;
+    width: 985px;   
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    z-index: 9999;
+    background: #0d0d0d;
+    border-bottom:10px solid #eee;
+}
+
+
+/*top menu bar separators*/
+ul#pronav li {
+    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/pronav/images/top_nav_separator.gif") no-repeat scroll 0 9px transparent;
+    float: left;
+    padding: 0 0 0 5px;
+}
+/*removes separator from 1st element*/
+ul#pronav li#Furniture {
+    background: none repeat scroll 0 0 transparent;
+    padding: 0;
+	
+}
+
+
+/*top menu category properties*/
+ul#pronav li a {
+    
+    color: #fff;
+    float: left;
+    font-weight: normal;
+    height: 25px;
+    overflow: hidden;
+    padding: 7px 13px 0 8px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    z-index: 999999;
+}
+/*removes padding on left from 1st element*/
+ul#pronav li#Furniture a {
+    padding: 7px 13px 0 15px;
+}
+/*removes padding on right from last element*/
+/*ul#pronav li#gifts a{
+    padding: 0;
+}*/
+
+/*removes navigation pin from last element*/
+/*ul#pronav li a#gifts:hover, ul#pronav li:hover a#gifts {
+    background: none repeat scroll 0 0 transparent;
+   
+}*/
+
+ul#pronav li a span {
+    display: block;
+}
+/*defines red button on right*/
+/*ul#pronav li#gifts a span  {
+    background: none repeat scroll 0 0 #BF0000;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 5px 10px;
+    position: relative;
+    top: 5px;
+   
+}*/
+
+ul#pronav li a span img {
+    vertical-align: middle;
+}
+/*sets hover pin and colour change to tp menu*/
+ul#pronav li:hover a, ul#pronav li a:hover {
+    background-position: 0 0;
+    text-decoration: none;
+}
+/*adds pin */
+ul#pronav li:hover a {
+    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/pronav/images/fl-dropdown.gif") no-repeat scroll center 27px transparent;
+    
+}
+ul#pronav li:hover ul li a {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    font-weight: normal;
+    text-decoration: none;
+}
+/*ul#pronav a.dashboard {
+}
+ul#pronav a.acl {
+}
+ul#pronav a.users {
+}*/
+
+
+/******* Top Level Drop Down *******/
+ul#pronav li .sub {
+    background: none repeat scroll 0 0 #fff;
+    border-top: 10px solid #e84f60;
+    border-left: 3px solid #e84f60;
+    border-right: 3px solid #e84f60;
+    border-bottom: 3px solid #e84f60;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    float: left;
+    left: 0;
+    max-width: 985px;
+    padding: 10px;
+    position: absolute;
+    top: 32px;
+    width: 985px;
+    z-index: 719;
+    border-bottom-left-radius:5px;
+    border-bottom-right-radius:5px;
+    
+}
+
+ul#pronav li .row {
+    clear: both;
+    margin-bottom: 10px;
+    width: 100%;
+}
+ul#pronav li .sub ul {
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 224px;
+    height: 300px;
+   
+}
+
+/******* Optional Assets *******/
+.clear {
+    clear: both;
+    height: 1px;
+    overflow: hidden;
+    text-indent: 100px;
+    width: 1px;
+}
+ul#pronav .sub ul li {
+    background: none repeat scroll 0 0 transparent;
+    color: #000000;
+    font-size: 12px;
+    padding: 0;
+    width: 100%;
+}
+
+ul#pronav .sub ul li.first a {
+	font-weight:bold;
+	font-size:12px;
+    text-transform: uppercase;
+    padding: 10px 0 5px 0;
+    
+}
+ul#pronav .sub ul li h2 {
+    font-size: 1.3em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+ul#pronav .sub ul li h2 a {
+    background-image: none;
+    color: #000000;
+    padding: 5px 0;
+}
+ul#pronav .sub ul li a/*, ul#pronav li:hover .sub ul.brand-list li a */{
+    background: none repeat scroll 0 0 transparent;
+    color: #232323;
+    display: block;
+    float: none;
+    font-size: 11px;
+    font-weight: normal;
+    height: auto;
+    padding: 0 0 0 15px;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-transform: capitalize;
+}
+
+}*/
+ul#pronav li:hover .sub ul.brand-list li a {
+    padding: 6px 0 6px 30px;
+}
+ul#pronav .sub ul li a:hover, ul#pronav li:hover .sub ul.brand-list li a:hover {
+    color: #000;
+}
+ul#pronav .sub ul li.last a, ul#pronav li:hover .sub ul.brand-list li.last a {
+    border-bottom: 0 none;
+}
+
+ul#pronav .sub ul li a:hover {
+    background-position: 0 0;
+    color: #a01234;
+    text-align: left;
+    text-decoration: none;
+    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/pronav/images/sml_arrow.gif") no-repeat scroll 2px 6px transparent;
+    
+ }
+
+ ul#pronav .sub ul li.first a:hover {
+    background: none;
+ }
+ 
+ 
+
+ul#pronav .sub ul.lrg-nav-ad { /*reference in admin/static blocks*/
+    float: left;
+    width: 301px;
+    height:300px;
+    margin-right: 10px;
+    
+    
+}
+ul#pronav .sub ul.sml-nav-ad { /*reference in admin/static blocks*/
+    float: left;
+    width: 190px;
+    
+    
+}
+/*margin between sml-nav-ads*/
+ul#pronav .sub ul.sml-nav-ad img {
+    margin-bottom: 10px;
+}

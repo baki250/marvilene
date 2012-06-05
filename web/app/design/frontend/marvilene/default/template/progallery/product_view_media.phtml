@@ -1,0 +1,179 @@
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    $lightboxEvent = $this->getLightboxConfig('open_event');
+    $lightboxEventString = $lightboxEvent == 'click' ? 'Click' : 'Double click';
+    $baseImageUrl = $this->helper('catalog/image')->init($_product, 'image');
+    $baseImageFilename = $this->getImageFilename($baseImageUrl);
+?>
+   <?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+   <?php if ($this->getConfig('mage_zoom')): ?>
+   <p class="product-image product-image-zoom" style="border:<?php echo $this->getConfig('product_image_border')?>;width:<?php echo $this->getConfig('no_zoom_view_width')?>px;height:<?php echo $this->getConfig('no_zoom_view_height')?>px;">
+    <?php
+        $_img = '<img ondblclick="return false;" id="image" src="'.$baseImageUrl.'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+	</p>
+	<p class="zoom-notice" id="track_hint"><?php echo $this->__( $lightboxEventString . ' on above image to view full picture') ?></p>
+    <div class="zoom">
+       <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>" alt="<?php echo $this->__('Zoom Out') ?>" title="<?php echo $this->__('Zoom Out') ?>" class="btn-zoom-out" />
+       <div id="track">
+           <div id="handle"></div>
+       </div>
+       <img id="zoom_in" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_in.gif') ?>" alt="<?php echo $this->__('Zoom In') ?>" title="<?php echo $this->__('Zoom In') ?>" class="btn-zoom-in" />
+    </div>
+   <script type="text/javascript">
+   //<![CDATA[
+       Event.observe(window, 'load', function() {
+           product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
+       });
+   //]]>
+   </script>
+	<?php else: ?>
+	<!-- Mage Zoom is disabled -->
+	<p class="product-image product-image-zoom" style="border:<?php echo $this->getConfig('product_image_border')?>;width:<?php echo $this->getConfig('no_zoom_view_width')?>px;height:<?php echo $this->getConfig('no_zoom_view_height')?>px;">
+	
+    <?php
+        $_img = '<img ondblclick="return false;" id="image" src="'.$baseImageUrl.'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+        echo $_helper->productAttribute($_product, $_img, 'image');
+    ?>
+	</p>
+	<p class="zoom-notice" id="track_hint"><?php echo $this->__($lightboxEventString . ' on above image to view full picture') ?></p>
+    <div style="display:none" class="zoom">
+       <img id="zoom_out" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_out.gif') ?>" alt="<?php echo $this->__('Zoom Out') ?>" title="<?php echo $this->__('Zoom Out') ?>" class="btn-zoom-out" />
+       <div id="track">
+           <div id="handle"></div>
+       </div>
+       <img id="zoom_in" src="<?php echo $this->getSkinUrl('images/slider_btn_zoom_in.gif') ?>" alt="<?php echo $this->__('Zoom In') ?>" title="<?php echo $this->__('Zoom In') ?>" class="btn-zoom-in" />
+    </div>
+   <script type="text/javascript">
+   //<![CDATA[
+       Event.observe(window, 'load', function() {
+           product_zoom = new Product.Zoom('image', 'track', 'handle', 'zoom_in', 'zoom_out', 'track_hint');
+       });
+   //]]>
+   </script>
+	<?php endif;?>
+	<!-- Product has no image -->
+   <?php else: ?>
+   <p class="product-image">
+       <?php
+           $_img = '<img src="'.$baseImageUrl.'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+           echo $_helper->productAttribute($_product, $_img, 'image');
+       ?>
+   </p>
+   <?php endif; ?>
+   
+   <?php if (count($this->getGalleryImages()) > 0): ?>
+   <div class="more-views" style="position:relative;width:<?php echo $this->getConfig('more_views_width')?>px;">
+   	<h2><?php echo $this->__('More Views') ?></h2>
+   	<?php if ($this->getCarouselConfig('has_prevandnext')):?>
+      <div id="thumbs-prev-and-next">
+       	<span id="thumbs-prev" class="thumbs-carousel-navig">prev</span>
+       	<span id="thumbs-next" class="thumbs-carousel-navig">next</span>
+       	<div style="clear:both;float:none;"></div>
+      </div>
+    <?php endif;?>
+   	<div id="thumbs-overflower" style="overflow:hidden;width:100%;">
+      	<!--  <ul id="more-views-list" style="overflow:hidden;width:1000px;"> -->
+      	<ul id="more-views-list">
+       <?php foreach ($this->getGalleryImages() as $k => $_image): ?>
+       		<?php $thumbSrc = $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())?>
+       		<?php if ($this->getImageFilename($thumbSrc) == $baseImageFilename):?>
+				<li>
+               <a style="border:<?php echo $this->getConfig('thumbs_border')?>;width:<?php echo $this->getConfig('thumbs_width')?>px;height:<?php echo $this->getConfig('thumbs_height')?>px;" href="#" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+               <img class="viewable" src="<?php echo $thumbSrc->resize($this->getConfig('thumbs_width'), $this->getConfig('thumbs_height')); ?>" width="<?php echo $this->getConfig('thumbs_width')?>" height="<?php echo $this->getConfig('thumbs_height')?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
+               <div style="display:none" class="i-i"><?php echo $k?></div>
+           </li>
+           <?php else:?>
+           <li>
+               <a style="border:<?php echo $this->getConfig('thumbs_border')?>;width:<?php echo $this->getConfig('thumbs_width')?>px;height:<?php echo $this->getConfig('thumbs_height')?>px;" href="#" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>">
+               <img src="<?php echo $thumbSrc->resize($this->getConfig('thumbs_width'), $this->getConfig('thumbs_height')); ?>" width="<?php echo $this->getConfig('thumbs_width')?>" height="<?php echo $this->getConfig('thumbs_height')?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
+               <div style="display:none" class="i-i"><?php echo $k?></div>
+           </li>
+       		<?php endif;?>
+           
+       <?php endforeach; ?>
+       </ul>
+       <ul id="more-views-list-clone" style="display:none;">
+       <?php foreach ($this->getGalleryImages() as $k => $_image): ?>
+           <li>
+               <a style="border:<?php echo $this->getLightboxConfig('thumbs_border')?>;width:<?php echo $this->getLightboxConfig('thumbs_width')?>px;height:<?php echo $this->getLightboxConfig('thumbs_height')?>px;" href="#" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize($this->getLightboxConfig('thumbs_width'), $this->getLightboxConfig('thumbs_height')); ?>" width="<?php echo $this->getLightboxConfig('thumbs_width')?>" height="<?php echo $this->getLightboxConfig('thumbs_height')?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" /></a>
+               <div style="display:none" class="i-i"><?php echo $k?></div>
+           </li>
+       <?php endforeach; ?>
+       </ul>
+    </div>
+    <?php if ($this->getCarouselConfig('has_pagination')):?>
+    <div class="pagination" id="thumbs-pagination"></div>
+    <?php endif;?>
+   </div>
+   <?php endif; ?>
+
+<p id="current_url" style="display:none;"><?php echo  $this->helper('core/url')->getCurrentUrl(); ?></p>
+<script>
+jQuery(function(){
+	jQuery('div.more-views ul li img').progalleryThumbs({
+		product_id                 : <?php echo $_product->getId()?>,
+		mage_baseurl               : '<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>',
+		mage_zoom                  : <?php echo $this->getConfig('mage_zoom')?>,
+		resize_width               : <?php echo $this->getConfig('no_zoom_view_width')?>,
+		resize_height              : <?php echo $this->getConfig('no_zoom_view_height')?>,
+		carouselCircular           : <?php echo $this->getCarouselConfig('circular') ? 'true' : 'false'?> ,
+		carouselInfinite           : <?php echo $this->getCarouselConfig('infinite') ? 'true' : 'false'?>,
+		carouselDirection          : '<?php echo $this->getCarouselConfig('direction')?>',
+		carouselItems              : <?php echo $this->getCarouselConfig('items')?>,
+		carouselScrollItems        : <?php echo $this->getCarouselConfig('scrollitems')?>,
+		carouselScrollEffect       : '<?php echo $this->getCarouselConfig('scrolleffect')?>',
+		carouselScrollDuration     : <?php echo $this->getCarouselConfig('scrollduration')?>,
+		carouselPauseOnHover       : <?php echo $this->getCarouselConfig('scrollhoverpause') ? 'true' : 'false'?>,
+		carouselPlay               : <?php echo $this->getCarouselConfig('play') ? 'true' : 'false'?>,
+		carouselPlayDelay          : <?php echo $this->getCarouselConfig('playdelay')?>,
+		carouselHasPrevAndNext     : <?php echo $this->getCarouselConfig('has_prevandnext') ? 'true' : 'false'?>,
+		carouselHasPagination      : <?php echo $this->getCarouselConfig('has_pagination') ? 'true' : 'false'?>,
+		carouselPrevButton         : '<?php echo $this->getCarouselConfig('prev') ?>',
+		carouselNextButton         : '<?php echo $this->getCarouselConfig('next')?>',
+		carouselPagination         : '<?php echo $this->getCarouselConfig('pagination')?>'});
+	  
+	jQuery('#image').progallery({
+		product_id                     : <?php echo $_product->getId()?>,
+		debug                          : false,
+		mage_zoom                      : <?php echo $this->getConfig('mage_zoom')?>,
+		mage_baseurl                   : '<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_WEB); ?>',
+		productViewWidth               : <?php echo $this->getConfig('no_zoom_view_width')?>,
+		defaultContainerWidth          : <?php echo $this->getLightboxConfig('lightboxwidth')?>,
+		defaultImageWidth              : <?php echo $this->getConfig('default_image_width')?>,
+		lightboxOriginSelector           : '.product-img-box',
+		lightboxOpeningEvent           : '<?php echo $this->getLightboxConfig('open_event')?>',
+		lightboxOpenEasing             : '<?php echo $this->getLightboxConfig('open_easing')?>',
+		lightboxOpenAnimationTime      : <?php echo $this->getLightboxConfig('open_easing_time')?>,
+		lightboxImageOpenEasing        : '<?php echo $this->getLightboxConfig('open_img_easing')?>',
+		lightboxImageOpenAnimationTime : <?php echo $this->getLightboxConfig('open_img_easing_time')?>,
+		lightboxTopMargin              : <?php echo $this->getLightboxConfig('top_margin')?>,
+		lightboxBottomMargin           : <?php echo $this->getLightboxConfig('bottom_margin')?>,
+		lightboxPanningMode            : '<?php echo $this->getLightboxConfig('panningmode')?>',
+		lightboxClosingSpeed           : '<?php echo $this->getLightboxConfig('closing_speed')?>',
+		thumbsWidth                    : <?php echo $this->getLightboxConfig('thumbs_width')?>,
+		lightboxThumbsBarTop           : <?php echo $this->getLightboxThumbsBarConfig('top') ? $this->getLightboxThumbsBarConfig('top') : 'false'?>,
+		lightboxThumbsBarRight         : <?php echo $this->getLightboxThumbsBarConfig('right') ? $this->getLightboxThumbsBarConfig('right') : 'false'?>,
+		lightboxThumbsBarBottom        : <?php echo $this->getLightboxThumbsBarConfig('bottom') ? $this->getLightboxThumbsBarConfig('bottom') : 'false'?>,
+		lightboxThumbsBarLeft          : <?php echo $this->getLightboxThumbsBarConfig('left') ? $this->getLightboxThumbsBarConfig('left') : 'false'?>,
+		lightboxThumbsBarZindex        : <?php echo $this->getLightboxThumbsBarConfig('zindex') ? $this->getLightboxThumbsBarConfig('zindex') : '0'?>,
+		lightboxThumbsBarWidth         : <?php echo is_numeric($this->getLightboxThumbsBarConfig('width')) ? $this->getLightboxThumbsBarConfig('width') : "'" . $this->getLightboxThumbsBarConfig('width') . "'"  ?>,
+		lightboxThumbsBarHeight        : <?php echo is_numeric($this->getLightboxThumbsBarConfig('height')) ? $this->getLightboxThumbsBarConfig('height') : "'" . $this->getLightboxThumbsBarConfig('height') . "'"  ?>,
+		lightboxCarouselCircular       : <?php echo $this->getLightboxCarouselConfig('circular') ? 'true' : 'false'?> ,
+		lightboxCarouselInfinite       : <?php echo $this->getLightboxCarouselConfig('infinite') ? 'true' : 'false'?>,
+		lightboxCarouselDirection      : '<?php echo $this->getLightboxCarouselConfig('direction')?>',
+		lightboxCarouselItems          : <?php echo $this->getLightboxCarouselConfig('items')?>,
+		lightboxCarouselScrollItems    : <?php echo $this->getLightboxCarouselConfig('scrollitems')?>,
+		lightboxCarouselScrollEffect   : '<?php echo $this->getLightboxCarouselConfig('scrolleffect')?>',
+		lightboxCarouselScrollDuration : <?php echo $this->getLightboxCarouselConfig('scrollduration')?>,
+		lightboxCarouselPauseOnHover   : <?php echo $this->getLightboxCarouselConfig('scrollhoverpause') ? 'true' : 'false'?>,
+		lightboxCarouselPlay           : <?php echo $this->getLightboxCarouselConfig('play') ? 'true' : 'false'?>,
+		lightboxCarouselPlayDelay      : <?php echo $this->getLightboxCarouselConfig('playdelay')?>,
+		lightboxCarouselPrevButton     : '<?php echo $this->getLightboxCarouselConfig('prev') ?>',
+		lightboxCarouselPrevEasing     : '<?php echo $this->getLightboxCarouselConfig('prev_easing') ?>',
+		lightboxCarouselNextEasing     : '<?php echo $this->getLightboxCarouselConfig('next_easing') ?>',
+		lightboxCarouselNextButton     : '<?php echo $this->getLightboxCarouselConfig('next')?>'});  
+});
+</script>
