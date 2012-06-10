@@ -10,4 +10,5 @@ web/media/js/*
 web/media/css/*.css
 web/errors/local.xml
 web/app/etc/local.xml
+web/var/zoom/*
 web/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php
