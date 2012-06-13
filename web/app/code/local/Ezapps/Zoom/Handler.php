@@ -195,13 +195,13 @@ class Ezapps_Zoom_Handler
 					$params[$key] = urlencode($_GET[$key]);
 			if (array_key_exists($page_name, $_GET)) {
 				$page = array($page_name => $_GET[$page_name]);
-				$files[] = this->paramsToFile(array_merge($page, $params), $file_to_check);
-			} else $files[] = this->paramsToFile(array_merge(array($page_name => 1), $params), $file_to_check);
+				$files[] = self::paramsToFile(array_merge($page, $params), $file_to_check);
+			} else $files[] = self::paramsToFile(array_merge(array($page_name => 1), $params), $file_to_check);
 	
 		} else if (array_key_exists($page_name, $_GET))
-			$files[] = this->paramsToFile(array($page_name => $_GET[$page_name]), $file_to_check);
+			$files[] = self::paramsToFile(array($page_name => $_GET[$page_name]), $file_to_check);
 		else {
-			$files[] = this->paramsToFile(array($page_name => 1), $file_to_check);
+			$files[] = self::paramsToFile(array($page_name => 1), $file_to_check);
 		}
 	
 		$page = false;			
