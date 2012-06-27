@@ -44,80 +44,39 @@
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
 <div class="product-view">
-    <div class="product-essential">
+  <div class="review-left">
     <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
         <div class="no-display">
             <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
             <input type="hidden" name="related_product" id="related-products-field" value="" />
         </div>
-
-        <div class="product-shop">
-		<?php echo $this->getChildHtml('alert_urls') ?> <!--pin it button block-->
+		
+        <div class="product-review">
+	
             <div class="product-name">
-				<h1 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></h1> <!--adds brand in category grid -->
+				<h1 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></a></h1> <!--adds brand in category grid -->
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
 
-            <?php if ($this->canEmailToFriend()): ?>
-                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
-            <?php endif; ?>
-
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-            
-            <?php echo $this->getChildHtml('product_type_data') ?>
-            <?php echo $this->getTierPriceHtml() ?>
-       
-
-            <?php if (!$this->hasOptions()):?>
-                <div class="add-to-box">
-                    <?php if($_product->isSaleable()): ?>
-                        <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                            <span class="or"><?php echo $this->__('OR') ?></span>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                    <?php echo $this->getChildHtml('addto') ?>
-                </div>
-            <?php endif; ?>
-
-			     <?php echo $this->getChildHtml('extrahint') ?>
-			
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?> <!--block calls for configurable product options and add-to-cart button -->
-			<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-			<?php endif;?>
-
+         
+                      
         </div>
 
 
-        <div class="product-img-box">
-            <?php echo $this->getChildHtml('media') ?>
+        <div class="review-img-box">
+           
+			 <div class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="300" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></div>
         </div>
-		
+		 <?php echo $this->getChildHtml('other');?>
+
+</div>
 	
-		<?php echo $this->getChildHtml('product_review') ?>
-		
 	
-        <div class="clearer"></div>
-       
-		
-		
-		<div class="additional-content">
-		<?php if ($_product->getShortDescription()):?>
-                <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
-			<div class="attributes">
-			 <?php echo $this->getChildHtml('product_attributes') ?> <!-- added for product attributes in page, re: catalog.xml -->
-			</div>
-            <?php echo $this->getChildHtml('other');?>
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-            <?php endif;?> 
-		</div>
-		
     </form>
+	
+       
+		
+		<?php echo $this->getChildHtml('review_form'); ?>
 	
     <script type="text/javascript">
     //<![CDATA[
@@ -163,7 +122,7 @@
         }.bind(productAddToCartForm);
     //]]>
     </script>
-    </div>
+
 
     <div class="product-collateral">
         <?php echo $this->getChildHtml('info_tabs') ?>
@@ -173,4 +132,7 @@
         <a name="reviews"></a>
         <?php echo $this->getChildHtml('product_reviews') ?> <!-- added to call product reviews in the main content page -->
     </div>
+
 </div>
+
+
