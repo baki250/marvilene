@@ -4,7 +4,7 @@
 
     <default>
         <reference name="head">
-            <action method="addCss"><stylesheet>css/amshopby.css</stylesheet></action>
+            <!--<action method="addCss"><stylesheet>css/amshopby.css</stylesheet></action>-->
         </reference>
     </default>
 
