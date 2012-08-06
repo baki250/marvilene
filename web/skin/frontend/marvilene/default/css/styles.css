@@ -704,7 +704,7 @@ Category Page ==================================================================
 .products-grid li.item.last { margin:0px 0 0px 8px; border-right: none;  }
 .products-grid li.item .ratings {  position: absolute; left: 0px; top: 265px; width: 170px; }
 .products-grid .product-image { display: block; width: 160px; height: 160px; margin: 15px 0 5px; padding: 0px 1px 25px;}
-.amsorting-item .product-image{ display: block; width: 125px; height: 125px; margin: 15px 0 5px; padding: 0px 1px 25px;}
+.amsorting-item .product-image{ display: block; width: 100px; height: 100px; margin: 5px; padding: 9px;}
 .products-grid.first .product-image {  }
 .products-grid li.last .product-image {   }
 .products-grid .manufacturer a, .amsorting-item .manufacturer a,.my-wishlist .manufacturer a, .cart .crosssell .manufacturer a , .cart-table .manufacturer a{  text-transform: uppercase;color: #2e2e2e; font-size: 11px; font-weight: bold; margin: 3px 0 6px 5px; text-decoration: none; }
@@ -1626,22 +1626,22 @@ Clears =========================================================================
 
 /*banner slider on home page*/
 .top-banner {padding: 0 0 10px 0;}
-.slides_container { width:985px; height:270px;}             
-.slides_container div { width:985px; height:270px;display:block;} 
+.slides_container { width:985px; height:400px;}             
+.slides_container div { width:985px; height:400px;display:block;} 
 
 
 #slides {
 width: 985px; 
-
+height: 400px;
 }
 
 #slides ul.pagination {
-float: right;
+	float: left;
 	margin:-30px 5px;
 	width:49px;
 	height:25px;
-	    position: relative; 
-        z-index:120; 
+	position: relative; 
+    z-index:120; 
 	background: #fff;
 	border-radius: 5px;
 }
@@ -1669,8 +1669,10 @@ float: right;
 }        
 
 /*Home Page Ads*/
-.ads-row {width: 985px; margin: 30px 0 0; padding: 15px 0 10px; height: 230px; background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent; }
-.ads-row .curated-item{ position: relative; overflow: hidden; display: block;  float: left;  width:230px; height: 230px;  margin: 0px 18px 0 0; border: 1px solid #bbb; }
+.ads-row {width: 985px; margin:15px 0 0; padding: 15px 0 10px; height: 664px;  }
+.ads-row .curated-item{ position: relative; overflow: hidden; display: block;  float: left;  width:312px; height: 312px;   border: 1px solid #bbb; }
+.ads-row #last.curated-item{ margin: 0 0 20px 0;}
+.ads-row #other.curated-item{ margin: 0px 21px 20px 0;}
 
 div.capty-caption {
 	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 95% 40% #0d0d0d;
@@ -1686,28 +1688,37 @@ div .capty-wrapper { dspanisplay: block !important; height: 230px!important; wid
 div .capty-image {height: 230px; width: 230px;}
 
 /*featured brands*/
-.brand-wrapper{padding: 15px 0; background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent; }
+.brand-wrapper{padding: 15px 0; }
 .amshopby-featured-wrapper img.amshopby-featured {padding: 0 20px; vertical-align: middle;}
 .featured-brands h2 {font-size: 16px; color: #000; text-transform: uppercase;}
 
 /* home page tabs*/
 
-.amsorting-item { position: relative; float: left; width: 172px; height: 280px; padding: 1px 1px 0; margin: 10px 8px 10px 8px; border: 1px dotted #fff;}
+.amsorting-item { position: relative; float: left; margin: 5px; border: 1px solid #bbb;}
   .amsorting-item:hover{}
  
- ul.htabs.hide li a{display: block; width: 150px; padding: 10px; float: left; border-top: 1px dotted #000;border-right: 1px dotted #000; text-align: center; background: #f5f5f5;}
- ul.htabs.hide li.first a {border-left: 1px dotted #000;}
+ ul.htabs.hide li a{
+	display: block; width: 150px; padding: 10px; margin: 0 5px; float: left; border-top: 1px solid #bbb; border-right: 1px solid #bbb; 		border-left: 1px solid #bbb; text-align: center; border-top-left-radius: 5px; border-top-right-radius: 5px;
+	background: -moz-linear-gradient(center top , #fff, #f5f6f7);
+	background-image: -webkit-linear-gradient(top, #fff, #f5f6f7);
+	background: -moz-linear-gradient(center top , #fff, #f5f6f7);
+	background: -o-linear-gradient(top, #fff 0px, #f5f6f7 100%) transparent;
+	background-color: #f5f6f7;
+ 
+ }
+ ul.htabs.hide li.first a {border-left: 1px solid #bbb; margin: 0 5px 0 30px;}
  ul.htabs.hide li a:hover {text-decoration: none;}
- ul.htabs.hide li span {font-size: 12px; font-weight: bold; color: #000;}
- ul.htabs.hide li.active a{border-bottom: 2px dotted #fff; background: #fff; z-index: -1;  }
+ ul.htabs.hide li span {font-size: 12px; font-weight: bold; color: #000; word-spacing: 3px;}
+ ul.htabs.hide li.active a{border-bottom: 2px solid transparent; background: #fff; z-index: -1;  }
 
- ul.htabs.hide {border-bottom: 1px dotted #000;display: block; width: 100%; height: 40px; }
+ ul.htabs.hide {border-bottom: 1px solid #bbb;display: block; width: 100%; height: 40px; }
 .block-list.block-viewed {border: none; margin: 1px 0 0; }
 
 #amshopby-slider-prices { position: relative; }
 .slider-prices div { position: absolute; top: 0px; }
 .hide {display: none; }
-.tabs { min-height:630px; }
+.tabs {  }
+.tabs .block .block-content {  background: transparent; padding: 10px 0;}
 
 /*ABOUT US*/
 
@@ -1722,8 +1733,28 @@ div .capty-image {height: 230px; width: 230px;}
 .faq-container span {display: block; padding: 10px 0 0;}
 
 /*Captions*/
-.caption {position: absolute; height: 30px; opacity: 0.7; bottom:0; 	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #0d0d0d; color: white; font: bold 12px arial;
-        text-transform: uppercase; padding: 10px; width: 100%;} 
+.caption {
+	position: absolute; 
+	height: 30px; 
+	opacity: 0.87; 
+	bottom:0; 	
+	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #0d0d0d; 
+	color: white; 
+	font: bold 12px arial;
+	text-transform: uppercase; 
+	padding: 10px; 
+	width: 100%;
+	word-spacing: 3px;
+	
+	-webkit-transition: all 0.35s ease;
+	-moz-transition:    all 0.35s ease;
+	-o-transition:      all 0.35s ease;
+} 
+
+.ads-row #last.curated-item:hover .caption, .ads-row #other.curated-item:hover .caption  {
+	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #ec853d;
+	
+}
         
 /**
  * Magento
