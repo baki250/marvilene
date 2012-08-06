@@ -28,12 +28,16 @@
  */
 ?>
 <div class="header-container">
-    
+    <div class="qa-wrapper">
     <div class="quick-access">
         <?php echo $this->getChildHtml('store_language') ?>
        <!-- <p class="welcome-msg"><?php echo $this->getWelcome()?></p> -->
+	   
        <?php echo $this->getChildHtml('topLinks') ?>
+	   <?php echo $this->getChildHtml('topSearch') ?>
     </div>
+	</div>
+	
     <div class="header">
         
         <?php if ($this->getIsHomePage()):?>
@@ -41,14 +45,14 @@
         <?php else:?>
         <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
         <?php endif?>
-	<?php echo $this->getChildHtml('topSearch') ?>
-        
+	
+         <?php echo $this->getChildHtml('topMenu') ?>
 
        
         <!--<p class="top-promo" title="<?php echo $this->__('Free Shipping on orders over 50$'); ?>"><?php echo $this->__('Free Shipping on orders over 50$'); ?></p> -->
                 
     </div>
-    <?php echo $this->getChildHtml('topMenu') ?>
+   
    <!-- <?php echo $this->getChildHtml('topBar') ?>-->
     <?php echo $this->getChildHtml('topContainer'); ?>
 </div>

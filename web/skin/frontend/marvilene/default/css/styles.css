@@ -59,7 +59,7 @@ ol {  list-style: none; }
 .no-bg {  background: none !important; }
 /*=======================================================================================
 Layout ================================================================================*/
-.wrapper { background: #f5f5f5;  }
+.wrapper { }
 .page {  background: #fff;width: 985px; margin: 15px auto 0; padding: 0 15px 2px; text-align: left; }
 .page-print {  background: #FFF; padding: 25px 30px; text-align: left; }
 .page-empty {  background: #FFF; padding: 20px; text-align: left; }
@@ -390,63 +390,93 @@ Misc*/
 /*=======================================================================================
 Header ================================================================================*/
 .logo {  float: left; }
-.header-container {  }
-.header {  margin: 0 0 12px; }
-.header .logo {  float: left; text-decoration: none !important; }
+.header-container {  
+ background: -moz-linear-gradient(center top , #fff, #f5f6f7);
+ box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+background-image: -webkit-linear-gradient(top, #fff, #f5f6f7);
+background: -o-linear-gradient(top, #fff 0px, #f5f6f7 100%) transparent;
+background-color: #f5f6f7;
+}
+
+
+
+.header {  width: 985px; margin: 0px auto; color: #FFF; }
+.header .logo {  float: left; text-decoration: none !important; margin: 15px 0;}
 .header .logo strong {  position: absolute; top: -999em; left: -999em; width: 0; height: 0; font-size: 0; line-height: 0; text-indent: -999em; overflow: hidden; }
 /*.header .top-promo { float:right; width:117px; height:30px; margin:12px 10px 0; background:url(../images/bkg_top-promo.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }*/
 
-
-.quick-access {  width: 985px; margin: 0 auto; background: #FFF; color: #FFF; padding: 7px 0px; text-align: right; }
+.qa-wrapper {width: 100%; 
+background: -moz-linear-gradient(center top , #44423e 0%, #202022 100%) repeat scroll 0% 0% transparent;
+background-image: -webkit-linear-gradient(top, #44423e 0%, #202022 100%);
+background: -o-linear-gradient(top, #44423e 0px, #202022 100%) transparent;
+background-color: #202022;
+}
+.quick-access {  width: 985px; margin: 0 auto; color: #FFF; padding: 7px 0px; text-align: left; }
 .quick-access .welcome-msg {  display: inline; margin: 0; color: #FFF; }
 .quick-access .welcome-msg a {  color: #DDD; }
 .quick-access .form-language {  float: left; }
 .quick-access .form-language label {  font-weight: bold; padding-right: 5px; color: #FFF; vertical-align: middle; }
 .quick-access .form-language select {  padding: 0; }
 .quick-access .form-language select.flags option {  background-position: 4px 50%; background-repeat: no-repeat; padding-left: 25px; }
-.quick-access .links {  padding-left: 8px; }
-.quick-access .links,
-.quick-access .links li {  display: inline; }
-.quick-access .links li {  padding: 0 10px 0 1px; }
-.quick-access .links a {  color: #000;}
-.quick-access .links a.top-link-cart { background: url(../images/cart2.gif) no-repeat left; padding: 3px 7px 0px 25px; }
-.quick-access .links a.top-link-wishlist { background: url(../images/heart.png) no-repeat 0 0; padding: 3px 7px 0px 20px; }
-.quick-access .links a {  padding: 3px 7px 0px 0; }
-.quick-access .links a:hover { color: #ED3897; text-decoration: none;  }
-.quick-access .links li.last a {  padding: 0;  }
+.quick-access .links { width: 500px;float: left; }
+.quick-access .links {padding: 7px 0;}
+.quick-access .links li {  display: inline;  height: 40px; width: 60px; }
 
-.top-bar {  width: 985px; margin: 0 auto; padding: 7px 0px 7px 0px; background: #FFF; line-height: 21px; }
+.quick-access .links li :hover {
+
+background: -moz-linear-gradient(center top , #66625f 0%, #202022 100%) repeat scroll 0% 0% transparent;
+background-image: -webkit-linear-gradient(top, #66625f 0%, #202022 100%);
+background: -o-linear-gradient(top, #66625f 0px, #202022 100%) transparent;
+background-color: #44423e;
+-webkit-box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102, 98, 95, 0.12);
+box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102, 98, 95, 0.12);
+
+}
+
+.quick-access .links li {  }
+.quick-access .links a {  color: #fff; font-size: 12px; font-weight: bold; text-transform: uppercase;word-spacing: 3px;}
+
+
+.quick-access .links a {  padding: 15px 15px; }
+.quick-access .links a:hover { text-decoration: none;  }
+
+
+.top-bar {  width: 985px; margin: 0 auto; padding: 7px 0px 7px 0px; background: #FFF; line-height: 21px;  }
 .top-bar .breadcrumbs {  float: left;/*width:580px;*/
  overflow: hidden; }
  
  /* TOP SEARCH CONFIG*/
- .header .form-search {
+ .quick-access .form-search {
     text-align: right;
-    padding: 25px 0 0 0;
+    padding: 0;
+	width: 400px;
+	display: inline;
+	float: right;
 }
-.header .form-search label {
+.quick-access  .form-search label {
     display: none;
 }
-.header .form-search .search-autocomplete {
+.quick-access  .form-search .search-autocomplete {
     z-index: 999;
 }
-.header .form-search input#search {
+.quick-access  .form-search input#search {
     border: 1px solid #c3c3c3;
-    font-size: 16px;
+    font-size: 13px;
     height: 31px;
     padding: 0 10px;
-    width: 295px;
+    width: 230px;
+	background: #f5f6f7;
 }
-.header .form-search .button span {
+.quick-access  .form-search .button span {
     height: auto;
     padding: 0;
 }
-.header .form-search .button span span, #searchform .button span span {
-    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll center center #0d0d0d;
-    display: block;
-    height: 33px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.quick-access .form-search .button span span, #searchform .button span span {
+    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/search-button.png") no-repeat scroll center center #f5f6f7;
+	border: 1px solid #c3c3c3;
+    display: inline-block;
+    height: 31px;
     width: 33px;
 }
 #searchform .button, #searchform .button span, #searchform .button span span {
@@ -456,20 +486,20 @@ Header =========================================================================
 /*.header .form-search .button:hover span span {
     background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-orange.png") no-repeat scroll center center #0d0d0d;
 }*/
-.header .form-search .search-autocomplete ul {
+.quick-access .form-search .search-autocomplete ul {
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
 }
-.header .form-search .search-autocomplete li {
+.quick-access .form-search .search-autocomplete li {
     border-bottom: 1px solid #DDDDDD;
     cursor: pointer;
     padding: 3px;
 }
-.header .form-search .search-autocomplete li .amount {
+.quick-access  .form-search .search-autocomplete li .amount {
     float: right;
     font-weight: bold;
 }
-.header .form-search .search-autocomplete li.selected {
+.quick-access  .form-search .search-autocomplete li.selected {
 }
  
 
@@ -1485,8 +1515,8 @@ MAP Popup=======================================================================
 .map-popup-only-text {  border-top: 1px solid #DDD; }
 /*=======================================================================================
 Footer ================================================================================*/
-.footer-container {  }
-.footer {  margin: 15px 0 40px; background: #0d0d0d; padding: 15px; border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top:10px solid #eee; color: #fff;}
+.footer-container {width:100%; background: #202022;  height: 300px;}
+.footer {  width: 985px; margin: 0 auto; background: transparent; padding: 15px;  color: #fff;}
 .footer a {  color: #fff; }
 
 .footer .f-left {  width: 190px; padding: 0 20px 0 0; }
