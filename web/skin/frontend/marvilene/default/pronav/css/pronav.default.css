@@ -30,9 +30,13 @@ ul#pronav li.primary {
     float: left;
 	color: #0b0b0b;
 	text-transform: uppercase;
-	background: url(../images/arrow-white.png ) no-repeat scroll 70% 30% transparent;
+	
 	
 }
+
+ul#pronav li#features {
+	padding-right: 110px;
+	}
 /*removes separator from 1st element*/
 ul#pronav li#Furniture {
     background: none repeat scroll 0 0 transparent;
@@ -103,7 +107,10 @@ ul#pronav li.primary a{
     text-transform: uppercase;
 	font-size: 12px;
 	font-weight: bold;
+	
+
 }
+
 
 /*removes padding on left from 1st element*/
 ul#pronav li#Furniture a {
@@ -178,7 +185,7 @@ ul#pronav li .sub {
 }
 
 ul#pronav li#collections .sub {
-	width: 290px!important;
+	width: 295px!important;
 	position: absolute;
 	top: 40px;
 	left: 0px;
@@ -186,7 +193,7 @@ ul#pronav li#collections .sub {
 }
 
 ul#pronav li#brands .sub {
-	width: 290px!important;
+	width: 295px!important;
 	position: absolute;
 	top: 40px;
 	left: 150px;
@@ -194,7 +201,7 @@ ul#pronav li#brands .sub {
 }
 
 ul#pronav li#features .sub {
-	width: 290px!important;
+	width: 295px!important;
 	position: absolute;
 	top: 40px;
 	left: 300px;
@@ -202,7 +209,7 @@ ul#pronav li#features .sub {
 }
 
 ul#pronav li#gifts .sub {
-	width: 290px!important;
+	width: 295px!important;
 	position: absolute;
 	top: 40px;
 	left: 200px;
@@ -226,7 +233,7 @@ ul#pronav li .sub ul {
 }
 
 ul#pronav li.primary ul {
-    width: 285px!important;
+    width: 290px!important;
 	height: 358px;
   }
 
