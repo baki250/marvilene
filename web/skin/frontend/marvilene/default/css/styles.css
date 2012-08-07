@@ -1516,16 +1516,16 @@ MAP Popup=======================================================================
 /*=======================================================================================
 Footer ================================================================================*/
 .footer-container {width:100%; background: #202022;  height: 300px;}
-.footer {  width: 985px; margin: 0 auto; background: transparent; padding: 15px;  color: #fff;}
-.footer a {  color: #fff; }
-
-.footer .f-left {  width: 190px; padding: 0 20px 0 0; }
-.footer .f-center2 {width: 190px; float: left; padding: 0 20px 0 0; }
-.footer .f-center {  width: 190px; float: right; padding: 0 20px 0 0; }
-.footer .f-right {  width: 300px; }
+.footer {  width: 985px; margin: 0 auto; background: transparent; padding: 50px 0;  color: #b2b2b2; text-align: left;}
+.footer a {  color: #b2b2b2; font-size: 13px; padding: 5px 0;}
+.f-logo {padding: 0 0 40px 0;}
+.footer .f-right {  width: 280px; }
+.footer .f-center2 {width: 170px; float: left; padding: 0 20px 0 0; }
+.footer .f-center {  width: 170px; float: left; padding: 0 20px 0 0; }
+.footer .f-left {  width: 300px; padding: 0 20px 0 0;}
 .icons {margin-left: -4px;}
-.info-header, .customer-service-header, .form-subscribe-header {font-weight: bold; font-size: 13px; margin: 0 0 10px 0;}
-.form-subscribe-body {margin: 0 0 5px 0;}
+.info-header, .customer-service-header, .form-subscribe-header {font-weight: bold; font-size: 13px; margin: 0 0 10px 0; color: #fff; word-spacing: 3px;}
+.form-subscribe-body {margin: 0 0 5px 0; font-size: 13px;}
 .footer .customer-service-header {}
 .footer ul {  }
 .footer li {    }
@@ -1540,8 +1540,12 @@ Footer =========================================================================
 .footer .form-subscribe button.button {  float: left; }
 .footer .form-subscribe label {  padding-top: 2px; font-weight: bold; color: #555; }
 .footer .form-subscribe .input-box {  width: 186px; margin: 0 5px 0 0; }
-.footer .form-subscribe input.input-text {  width: 180px; }
-.footer .form-subscribe button.button span span{  padding: 0 20px 0 10px;}
+.footer .form-subscribe input.input-text {  width: 180px; height: 20px;}
+
+.footer .form-subscribe button.button span {background: #ec853d; border: 1px solid #ef9a60; border-radius: 5px; color: #fff; text-transform: capitalize; padding: 0 20px;}
+.footer .form-subscribe button.button:hover  span{ background: #ef9a60;}
+
+
 .footer .footer-callout {  display: block; margin: -10px 0 10px; position: relative; }
 .footer .store-switcher {  color: #555; text-align: right; }
 .footer .store-switcher label {  font-weight: bold; vertical-align: middle; }
@@ -1781,7 +1785,7 @@ border: 1px solid #ef9a60;
 
  }
  .sale-button:hover { background: #ef9a60;}
- .sale-desc {font-size: 14px;position: absolute; top:285px; left: 20px;	text-transform: capitalize; color:#fff;}
+ .sale-desc {font-size: 14px;position: absolute; top:285px; left: 20px;	text-transform: capitalize; color:#fff; width: 272px;}
  
 
 .ads-row #last.curated-item:hover .caption, .ads-row #other.curated-item:hover .caption  {
