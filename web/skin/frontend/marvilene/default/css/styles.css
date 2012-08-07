@@ -1751,6 +1751,39 @@ div .capty-image {height: 230px; width: 230px;}
 	-o-transition:      all 0.35s ease;
 } 
 
+.banner-caption{
+	position: absolute; 
+	height: 400px; 
+	width: 312px;
+	opacity: 0.87; 
+	bottom:0; 
+	right: 0;	
+	background: #0d0d0d; 
+	color: #fff; 
+
+
+
+}
+.sale {font-size: 14px;position: absolute; top:50px; left: 20px;	text-transform: capitalize; }
+.today{font-size: 21px;position: absolute; top:85px; left: 20px;	text-transform: uppercase; word-spacing: 3px;}
+.sale-button {
+font-size: 15px;
+color:#fff;
+font-weight: bold;
+position: absolute; 
+top:160px; 
+left: 20px;	
+text-transform: capitalize;
+background: #ec853d;
+padding: 10px 20px;
+border-radius: 5px;
+border: 1px solid #ef9a60;
+
+ }
+ .sale-button:hover { background: #ef9a60;}
+ .sale-desc {font-size: 14px;position: absolute; top:285px; left: 20px;	text-transform: capitalize; color:#fff;}
+ 
+
 .ads-row #last.curated-item:hover .caption, .ads-row #other.curated-item:hover .caption  {
 	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #ec853d;
 	
