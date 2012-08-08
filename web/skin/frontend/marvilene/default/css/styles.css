@@ -714,13 +714,13 @@ Category Page ==================================================================
  .cart-table .manufacturer a:hover {text-decoration: none;}
 .products-grid .more_options a {  position: absolute; left:0px; top: 175px; text-transform: uppercase;color: #ED3897; font-size: 10px; font-weight: bold; margin: 3px 0 6px 5px; text-decoration: none; }
 .products-grid .product-name, .amsorting-item .product-name, .my-wishlist .product-name, .cart-table .product-name, .cart .crosssell .product-name  {  font-size: 13px; font-weight: normal; margin: 0 0 6px 5px; text-transform: capitalize; }
-.products-grid .product-name {margin: 50px 0 10px 10px;}
+.products-grid .product-name {margin: 60px 0 10px 10px;}
 .cart .crosssell .product-name  {margin:0;}
 .products-grid .product-name a , .amsorting-item .product-name a, .my-wishlist.product-name a , .my-wishlist .product-name a , .cart .crosssell .product-name a{  color: #2e2e2e; text-decoration: none;}
 .products-grid .product-name a:hover , .cart-table .product-name a:hover, .cart .crosssell .product-name  a:hover{  text-decoration: none; }
 .products-grid .price-box, .amsorting-item .price-box {margin: 0 0 10px 10px; width: 100px; }
 .products-grid .availability {  line-height: 21px; }
-.products-grid .item:hover .actions {  display: block; position: absolute; bottom: 100px; left: 10px;text-decoration: none;}
+.products-grid .item:hover .actions {  display: block; position: absolute; bottom: 90px; left: 10px;text-decoration: none;}
 .products-grid .actions { display: none;}
 .products-grid .link-wishlist{background: rgba(234,132,62,0.87); padding: 10px 20px; border: 1px solid rgba(239,154,96,0.87); border-radius: 5px; color: #fff; font-weight: bold; font-size: 15px; 
 -webkit-transition: all 0.35s ease;
