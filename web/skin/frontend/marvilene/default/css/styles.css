@@ -274,7 +274,7 @@ p.required {  font-size: 11px; text-align: right; color: #EB340A; }
 .pager .pages ol {  display: inline; width: 2px; }
 .pager .pages li {  display: inline; margin: 0 2px; }
 .pager .pages li a.previous:hover {  text-decoration: none;}
-.pager .pages .current { color: #ED3897; font-weight: bold;}
+.pager .pages .current { color: #ec853d; font-weight: bold;}
 
 
 
@@ -683,13 +683,13 @@ Mini Products List*/
 
 /*=======================================================================================
 Category Page =========================================================================*/
-
+.category {width: 985px; display: inline-block; }
 .category-wrapper {position: relative; right: 0px; top: 0px; width: 300px;  } 
 .transparency {height: 200px;width: 300px; position: absolute; top: 0px; left: 685px; margin: 0 0 7px; overflow: hidden;  background: #000; opacity: 0.6;}
-.category-title { width: 300px; position: absolute; top: 0px; left: 685px; margin: 0 0 7px; overflow: hidden; } 
-.category-title h1 {padding: 3px 0; color: #fff; font-size: 3em; font-weight: bold; text-transform: uppercase; line-height: 1.25; padding: 0 0 0 10px; }
+.category-title {} 
+.category-title h1 {padding:0;  font-size: 3em; font-weight: bold; text-transform: uppercase; line-height: 1.25; color: #202022; }
 .description-wrapper {position: relative; width: 300px; top: 0px; right: 0px}
-.category-description { position: absolute; top: 50px; width: 280px; left: 685px; font-size: 1.2em; color:#fff; text-align: justify; text-justify: newspaper; margin: 10px 10px 0 10px; }
+.category-description { width:100%; font-size: 13px; text-align: justify; text-justify: newspaper; margin: 20px 0; color; #202022; }
 
 .category-image {  width: 100%; overflow: hidden; margin: 0; text-align: center; }
 .category-image img {  }
@@ -701,7 +701,7 @@ Category Page ==================================================================
 .products-grid li.item { position: relative;  float: left; width:300px ; height: 432px;  margin: 0px 10px; padding:0; border: 10px solid transparent; -webkit-transition: all 0.35s ease;
 	-moz-transition:    all 0.35s ease;
 	-o-transition:      all 0.35s ease; }
-.products-grid li.item:hover { border: 10px solid  #f8f9f9; }
+.products-grid li.item:hover { border: 10px solid  #f5f6f7; }
 .products-grid li.item.first { margin:0;  }
 .products-grid li.item.last { margin:0;  }
 .products-grid li.item .ratings {  position: absolute; left: 0px; top: 265px; width: 170px; }
@@ -722,13 +722,13 @@ Category Page ==================================================================
 .products-grid .availability {  line-height: 21px; }
 .products-grid .item:hover .actions {  display: block; position: absolute; bottom: 90px; left: 10px;text-decoration: none;}
 .products-grid .actions { display: none;}
-.products-grid .link-wishlist{background: rgba(234,132,62,0.87); padding: 10px 20px; border: 1px solid rgba(239,154,96,0.87); border-radius: 5px; color: #fff; font-weight: bold; font-size: 15px; 
+.products-grid .link-wishlist{background: rgba(234,132,62,1); padding: 10px 20px; border: 1px solid rgba(239,154,96,1); border-radius: 5px; color: #fff; font-weight: bold; font-size: 13px; 
 -webkit-transition: all 0.35s ease;
 	-moz-transition:    all 0.35s ease;
 	-o-transition:      all 0.35s ease; }
 
 .products-grid a.link-wishlist:hover {text-decoration: none}
-.products-grid .link-wishlist:hover {background: rgba(239,154,96,0.87);}
+.products-grid .link-wishlist:hover {background: rgba(239,154,96,1);}
 .col2-left-layout .products-grid,
 .col2-right-layout .products-grid {  width: 750px; margin: 25px auto; }
 .col1-layout .products-grid,
