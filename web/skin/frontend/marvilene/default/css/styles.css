@@ -245,7 +245,7 @@ p.required {  font-size: 11px; text-align: right; color: #EB340A; }
 .breadcrumbs { float: left;}
 .breadcrumbs a {  text-transform: capitalize;color: #7F7F7F; }
 .breadcrumbs li {  display: inline; }
-.breadcrumbs li strong {  font-weight: bold; }
+.breadcrumbs li strong {  font-weight: bold; text-transform: capitalize;}
 .counter {float: right;}
 /*Page Heading*/
 .page-title {  width: 100%; overflow: hidden;  }
@@ -400,7 +400,7 @@ background-color: #f5f6f7;
 }
 
 
-
+.logo-cat {margin: 15px 0;}
 .header {  width: 985px; margin: 0px auto; color: #FFF; }
 .header .logo {  float: left; text-decoration: none !important; margin: 15px 0;}
 .header .logo strong {  position: absolute; top: -999em; left: -999em; width: 0; height: 0; font-size: 0; line-height: 0; text-indent: -999em; overflow: hidden; }
@@ -691,19 +691,21 @@ Category Page ==================================================================
 .description-wrapper {position: relative; width: 300px; top: 0px; right: 0px}
 .category-description { position: absolute; top: 50px; width: 280px; left: 685px; font-size: 1.2em; color:#fff; text-align: justify; text-justify: newspaper; margin: 10px 10px 0 10px; }
 
-.category-image {  width: 100%; overflow: hidden; margin: 0 0 10px; text-align: center; }
+.category-image {  width: 100%; overflow: hidden; margin: 0; text-align: center; }
 .category-image img {  }
 .category-products {  }
 /*View Type: Grid*/
  
-.products-grid {  position: relative; border-bottom: 1px solid #bbbbbb;  }
-.products-grid.last {  border-bottom: 0; }
-.products-grid li.item { position: relative; /*background: #f5f5f5; border-radius: 5px;*/ float: left; width: 172px; height: 350px; padding: 1px 1px 0; margin: 0px 8px 0px 8px; border-right: 1px solid #bbbbbb;}
-.products-grid li.item:hover {  }
-.products-grid li.item.first { margin: 0px 8px 0px 0;  }
-.products-grid li.item.last { margin:0px 0 0px 8px; border-right: none;  }
+.products-grid {  position: relative;}
+.products-grid.last {  }
+.products-grid li.item { position: relative;  float: left; width:300px ; height: 402px;  margin: 0px 10px; padding:0; border: 10px solid transparent; -webkit-transition: all 0.35s ease;
+	-moz-transition:    all 0.35s ease;
+	-o-transition:      all 0.35s ease; }
+.products-grid li.item:hover { border: 10px solid  #f8f9f9; }
+.products-grid li.item.first { margin:0;  }
+.products-grid li.item.last { margin:0;  }
 .products-grid li.item .ratings {  position: absolute; left: 0px; top: 265px; width: 170px; }
-.products-grid .product-image { display: block; width: 160px; height: 160px; margin: 15px 0 5px; padding: 0px 1px 25px;}
+.products-grid .product-image { display: block; width: 300px; height: 300px; margin: 0; padding: 0;}
 .amsorting-item .product-image{ display: block; width: 100px; height: 100px; margin: 5px; padding: 9px;}
 .products-grid.first .product-image {  }
 .products-grid li.last .product-image {   }
@@ -711,17 +713,28 @@ Category Page ==================================================================
 .cart .crosssell .manufacturer a  {margin:0;}
  .cart-table .manufacturer a:hover {text-decoration: none;}
 .products-grid .more_options a {  position: absolute; left:0px; top: 175px; text-transform: uppercase;color: #ED3897; font-size: 10px; font-weight: bold; margin: 3px 0 6px 5px; text-decoration: none; }
-.products-grid .product-name, .amsorting-item .product-name, .my-wishlist .product-name, .cart-table .product-name, .cart .crosssell .product-name  {  font-size: 11px; font-weight: normal; margin: 0 0 6px 5px; text-transform: capitalize; }
+.products-grid .product-name, .amsorting-item .product-name, .my-wishlist .product-name, .cart-table .product-name, .cart .crosssell .product-name  {  font-size: 13px; font-weight: normal; margin: 0 0 6px 5px; text-transform: capitalize; }
+.products-grid .product-name {margin: 20px 0 10px 10px;}
 .cart .crosssell .product-name  {margin:0;}
 .products-grid .product-name a , .amsorting-item .product-name a, .my-wishlist.product-name a , .my-wishlist .product-name a , .cart .crosssell .product-name a{  color: #2e2e2e; text-decoration: none;}
 .products-grid .product-name a:hover , .cart-table .product-name a:hover, .cart .crosssell .product-name  a:hover{  text-decoration: none; }
-.products-grid .price-box, .amsorting-item .price-box { position: absolute; left: 0px; bottom: 10px; width: 170px; margin: 15px 0 0 5px; }
+.products-grid .price-box, .amsorting-item .price-box {margin: 0 0 10px 10px; width: 100px; }
 .products-grid .availability {  line-height: 21px; }
-.products-grid .actions {  position: absolute; bottom: 20px; }
+.products-grid .item:hover .actions {  display: block; position: absolute; top: 20px; right: 20px;text-decoration: none;}
+.products-grid .actions { display: none;}
+.products-grid .link-wishlist{background: #ec853d; padding: 10px 20px; border: 1px solid #ef9a60; border-radius: 5px; color: #fff; opacity: 0.87; font-weight: bold; font-size: 15px; 
+-webkit-transition: all 0.35s ease;
+	-moz-transition:    all 0.35s ease;
+	-o-transition:      all 0.35s ease; }
+.products-grid a.link-wishlist:hover {text-decoration: none}
+.products-grid .link-wishlist:hover {background: #ef9a60;}
 .col2-left-layout .products-grid,
-.col2-right-layout .products-grid {  width: 750px; margin: 0 auto; }
+.col2-right-layout .products-grid {  width: 750px; margin: 25px auto; }
 .col1-layout .products-grid,
-.page-empty .products-grid {  width: 750px; margin: 0 auto; }
+.page-empty .products-grid {  width: 985px; margin: 40px  0; }
+
+
+
 /*View Type: List*/
 .products-list li.item {  border-bottom: 1px solid #D9DDD3; padding: 12px 10px; }
 .products-list li.item.last {  border-bottom: 0; }
@@ -781,10 +794,10 @@ Rating*/
 /********** < Product Prices*/
 .price {  white-space: nowrap !important; }
 
-.price-box .price {  font-size: 15px; font-weight: bold; color: #2e2e2e; }
+.price-box .price {  font-size: 15px;  color: #444; }
 /*Regular price*/
 .regular-price {  margin: 0 ; }
-.regular-price .price {  font-size: 15px; font-weight: bold; color: #2e2e2e; }
+.regular-price .price {  font-size: 15px;  color: #444; }
 /*Old price*/
 .old-price {  margin: 0; }
 .old-price .price-label { display: none;}
@@ -792,25 +805,25 @@ Rating*/
 /*Special price*/
 .special-price {  margin: 0 ; }
 .special-price .price-label { font-size: 10px; font-weight: bold; text-transform: uppercase; white-space: nowrap; color: #444;  }
-.special-price .price {  font-size: 15px; font-weight: bold; color: #2e2e2e; }
+.special-price .price {  font-size: 15px;  color: #444; }
 /*Minimal price (as low as)*/
 .minimal-price {  margin: 0 ; }
 .minimal-price .price-label {  font-size: 10px; font-weight: bold; text-transform: uppercase; white-space: nowrap; color: #444; }
-.minimal-price-link {  display: block; font-size: 15px; text-decoration: underline; color: #2e2e2e; }
+.minimal-price-link {  display: block; font-size: 15px; text-decoration: underline; color: #444; }
 .minimal-price-link .label {  color: #a01234; }
-.minimal-price-18 .price {  font-size: 15px; font-weight: bold; color: #a01234; }
+.minimal-price-18 .price {  font-size: 15px; color: #444; }
 /*Including tax*/
 .price-including-tax {  display: block; color: #888; }
 .price-including-tax .label {  font-size: 10px; text-transform: uppercase; white-space: nowrap; color: #888; }
-.price-including-tax .price {  font-size: 13px; font-weight: bold; color: #2e2e2e; }
+.price-including-tax .price {  font-size: 13px;  color: #444; }
 /*Excluding tax*/
 .price-excluding-tax {  display: block; color: #888; }
 .price-excluding-tax .label {  font-size: 10px; text-transform: uppercase; white-space: nowrap; color: #888; }
-.price-excluding-tax .price {  font-size: 12px; font-weight: normal; color: #2e2e2e; }
+.price-excluding-tax .price {  font-size: 12px;  color: #444; }
 /*Configured price*/
 .configured-price {  margin: 0; }
 .configured-price .price-label {  font-weight: bold; white-space: nowrap; }
-.configured-price .price { font-size: 15px; font-weight: bold; color: #a01234; }
+.configured-price .price { font-size: 15px;  color: #444; }
 /*Incl tax (for order tables)*/
 .price-incl-tax {  display: block; }
 .price-incl-tax .label {  display: block; white-space: nowrap; }

@@ -126,10 +126,13 @@ ul#pronav li#Furniture a {
 
 ul#pronav li a span {
     display: block;
+	
+	
 }
 
 ul#pronav li a span img {
     vertical-align: middle;
+	
 }
 /*sets hover pin and colour change to tp menu*/
 ul#pronav li:hover a, ul#pronav li a:hover {
