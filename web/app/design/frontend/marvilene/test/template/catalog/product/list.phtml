@@ -98,7 +98,7 @@
     <?php else: ?>
 
     <?php // Grid Mode ?>
-
+<div class="product-wrapper">
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
@@ -174,9 +174,34 @@
         </ul>
         <?php endif ?>
         <?php endforeach ?>
+		
+		</div>
+		
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
-    <?php endif; ?>
+   
 
+ <script type="text/javascript">
+ jQuery('.product-wrapper').infinitescroll({
+ 
+    navSelector  : ".toolbar",            
+                   // selector for the paged navigation (it will be hidden)
+    nextSelector : ".toolbar a.next",    
+                   // selector for the NEXT link (to page 2)
+    itemSelector : ".products-grid",          
+                   // selector for all items you'll retrieve
+	loadingText : "<em>Loading More Inspiration...</em>",
+	behavior : "magento",
+   }
+);
+
+</script>
+
+
+
+
+
+   <?php endif; ?>
+<div class="loader"></div>	<!--adds a container for jQuery infinite scroll to display its loader-->
     <div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
     </div>

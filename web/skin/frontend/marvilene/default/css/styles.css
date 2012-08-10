@@ -753,7 +753,8 @@ background:#adbc4f; padding: 10px 20px; border: 1px solid #c5be70; border-radius
 	
 .products-grid .actions2 ul a.website:hover {background: #c5be70;}
 
- 
+.product-wrapper {  position: relative; }
+
 
 /*View Type: List*/
 .products-list li.item {  border-bottom: 1px solid #D9DDD3; padding: 12px 10px; }
