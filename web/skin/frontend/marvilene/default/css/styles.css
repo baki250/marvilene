@@ -284,7 +284,7 @@ p.required {  font-size: 11px; text-align: right; color: #EB340A; }
 .pager .link-feed {  }
 /*Toolbar*/
 .toolbar {  }
-.toolbar .pager {  font-size: 11px; padding: 4px 8px;  text-align: center; background:#f5f5f5; border: 1px solid #e7e7e7; padding: 3px 8px; }
+.toolbar .pager {  font-size: 11px;  text-align: center; background:#f2f3f4;; border: 1px solid #eef0f1; padding: 10px 8px; }
 .toolbar .sorter {  }
 .toolbar-bottom {  }
 /*Data Table*/
@@ -419,7 +419,7 @@ background-color: #202022;
 .quick-access .form-language label {  font-weight: bold; padding-right: 5px; color: #FFF; vertical-align: middle; }
 .quick-access .form-language select {  padding: 0; }
 .quick-access .form-language select.flags option {  background-position: 4px 50%; background-repeat: no-repeat; padding-left: 25px; }
-.quick-access .links { width: 500px;float: left; }
+.quick-access .links { width: 650px;float: left; }
 .quick-access .links {padding: 7px 0;}
 .quick-access .links li {  display: inline;  height: 40px; width: 60px; }
 
@@ -450,7 +450,7 @@ box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102
  .quick-access .form-search {
     text-align: right;
     padding: 0;
-	width: 400px;
+	width: 300px;
 	display: inline;
 	float: right;
 }
@@ -687,7 +687,7 @@ Category Page ==================================================================
 .category-wrapper {position: relative; right: 0px; top: 0px; width: 300px;  } 
 .transparency {height: 200px;width: 300px; position: absolute; top: 0px; left: 685px; margin: 0 0 7px; overflow: hidden;  background: #000; opacity: 0.6;}
 .category-title {} 
-.category-title h1 {padding:0;  font-size: 3em; font-weight: bold; text-transform: uppercase; line-height: 1.25; color: #202022; }
+.category-title h1 {padding:0;  font-size: 20px; font-weight: bold; text-transform: uppercase; line-height: 1.25; color: #44423e; word-spacing: 3px; }
 .description-wrapper {position: relative; width: 300px; top: 0px; right: 0px}
 .category-description { width:100%; font-size: 13px; text-align: justify; text-justify: newspaper; margin: 20px 0; color; #202022; }
 
@@ -701,11 +701,14 @@ Category Page ==================================================================
 .products-grid li.item { position: relative;  float: left; width:300px ; height: 432px;  margin: 0px 10px; padding:0; border: 10px solid transparent; -webkit-transition: all 0.35s ease;
 	-moz-transition:    all 0.35s ease;
 	-o-transition:      all 0.35s ease; }
-.products-grid li.item:hover { border: 10px solid  #f5f6f7; }
+.products-grid li.item:hover { border: 10px solid  #eef0f1; }
 .products-grid li.item.first { margin:0;  }
 .products-grid li.item.last { margin:0;  }
 .products-grid li.item .ratings {  position: absolute; left: 0px; top: 265px; width: 170px; }
-.products-grid .product-image { display: block; width: 300px; height: 300px; margin: 0; padding: 0;}
+.products-grid .internal.product-image { display: block; width: 300px; height: 300px; margin: 0; padding: 0;}
+
+.products-grid .external.product-image { display: block; width: 300px; height: 200px; margin: 0; padding: 0;}
+
 .amsorting-item .product-image{ display: block; width: 100px; height: 100px; margin: 5px; padding: 9px;}
 .products-grid.first .product-image {  }
 .products-grid li.last .product-image {   }
@@ -713,15 +716,21 @@ Category Page ==================================================================
 .cart .crosssell .manufacturer a  {margin:0;}
  .cart-table .manufacturer a:hover {text-decoration: none;}
 .products-grid .more_options a {  position: absolute; left:0px; top: 175px; text-transform: uppercase;color: #ED3897; font-size: 10px; font-weight: bold; margin: 3px 0 6px 5px; text-decoration: none; }
-.products-grid .product-name, .amsorting-item .product-name, .my-wishlist .product-name, .cart-table .product-name, .cart .crosssell .product-name  {  font-size: 13px; font-weight: normal; margin: 0 0 6px 5px; text-transform: capitalize; }
+.products-grid .product-name, .amsorting-item .product-name, .my-wishlist .product-name, .cart-table .product-name, .cart .crosssell .product-name , .products-grid .source  {  font-size: 13px; font-weight: normal; margin: 0 0 6px 5px; text-transform: capitalize; }
 .products-grid .product-name {margin: 60px 0 10px 10px;}
+
+.products-grid .source {margin: 10px 0 10px 10px;}
+.products-grid .external-inspiration {margin:10px; text-align: justify; text-justify: newspaper; font-size: 13px;}
 .cart .crosssell .product-name  {margin:0;}
 .products-grid .product-name a , .amsorting-item .product-name a, .my-wishlist.product-name a , .my-wishlist .product-name a , .cart .crosssell .product-name a{  color: #2e2e2e; text-decoration: none;}
 .products-grid .product-name a:hover , .cart-table .product-name a:hover, .cart .crosssell .product-name  a:hover{  text-decoration: none; }
 .products-grid .price-box, .amsorting-item .price-box {margin: 0 0 10px 10px; width: 100px; }
 .products-grid .availability {  line-height: 21px; }
 .products-grid .item:hover .actions {  display: block; position: absolute; bottom: 90px; left: 10px;text-decoration: none;}
-.products-grid .actions { display: none;}
+
+.products-grid .item:hover .actions2 {  display: block; position: absolute; top: 220px; left: 10px;text-decoration: none;}
+.products-grid .item.external:hover .actions, .products-grid .item.external:hover .actions2  {  display: block; position: absolute; top: 90px; left: 10px;text-decoration: none;}
+.products-grid .actions, .products-grid .actions2 { display: none;}
 .products-grid .link-wishlist{background: rgba(234,132,62,1); padding: 10px 20px; border: 1px solid rgba(239,154,96,1); border-radius: 5px; color: #fff; font-weight: bold; font-size: 13px; 
 -webkit-transition: all 0.35s ease;
 	-moz-transition:    all 0.35s ease;
@@ -735,6 +744,16 @@ Category Page ==================================================================
 .page-empty .products-grid {  width: 985px; margin: 40px  0; }
 
 
+
+.products-grid .actions2 ul a.website {
+background:#adbc4f; padding: 10px 20px; border: 1px solid #c5be70; border-radius: 5px; color: #fff; font-weight: bold; font-size: 13px; text-decoration: none;
+-webkit-transition: all 0.35s ease;
+	-moz-transition:    all 0.35s ease;
+	-o-transition:      all 0.35s ease; }
+	
+.products-grid .actions2 ul a.website:hover {background: #c5be70;}
+
+ 
 
 /*View Type: List*/
 .products-list li.item {  border-bottom: 1px solid #D9DDD3; padding: 12px 10px; }

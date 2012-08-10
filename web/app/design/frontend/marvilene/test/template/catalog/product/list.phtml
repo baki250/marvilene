@@ -1,4 +1,4 @@
-
+<div class="amshopby-page-container"> <!--aded to enable Amasty Ajax-->
 <?php
 /**
  * Magento
@@ -40,6 +40,19 @@
 <p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
 <?php else: ?>
 <div class="category-products">
+<div class="breadcrumb-wrapper"> <!--breadcrumbs above toolbar-->
+<?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml() ?>
+<div class="counter"> <!-- item counter above toolbar-->
+<?php   
+   $toolbar = $this->getToolbarBlock();  
+   $toolbar->setCollection($_productCollection);  
+   if($toolbar->getCollection()->getSize() > 0):  
+      
+      echo $toolbar->__('Items %s - %s of %s total', $toolbar->getFirstNum(), $toolbar->getLastNum(), $toolbar->getTotalNum());  
+   endif;  
+?>  
+</div>
+</div>
     <?php echo $this->getToolbarHtml() ?>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
@@ -48,7 +61,7 @@
     <?php foreach ($_productCollection as $_product): ?>
         <li class="item<?php if( ++$_iterator == sizeof($_productCollection) ): ?> last<?php endif; ?>">
             <?php // Product Image ?>
-            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(210); ?>" width="210" height="210" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(170); ?>" width="170" height="170" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
             <?php // Product description ?>
             <div class="product-shop">
                 <div class="f-fix">
@@ -58,9 +71,6 @@
                     <?php echo $this->getReviewsSummaryHtml($_product) ?>
                     <?php endif; ?>
                     <?php echo $this->getPriceHtml($_product, true) ?>
-					
-														
-					
                     <!--<?php if($_product->isSaleable()): ?>
                         <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
                     <?php else: ?>
@@ -89,20 +99,15 @@
 
     <?php // Grid Mode ?>
 
-	
-	<div class="masonry-wrapper">
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
         <?php if ($i++%$_columnCount==0): ?>
-    
+        <ul class="products-grid">
         <?php endif ?>
-         
-			
-			<div class="item">
+            <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
 				
-			<!-- adds external links to images if they are specified and distinguishes between internal and external items-->			
-			<?php
+				<?php
 				$_productForExternalLink = Mage::getModel('catalog/product')->load($_product->getId());
 				if (1 == $_productForExternalLink->getData('product_external_link')) {
 					$linkTargetAttributeObj = $_productForExternalLink->getResource()->getAttribute("product_external_link_target");
@@ -112,10 +117,24 @@
 			?>
 			
 			<div class="external">
-				<a href="<?php echo $_productForExternalLink->getData('product_external_link_url'); ?>" target="<?php echo $link_target; ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="300" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+				<a href="<?php echo $_productForExternalLink->getData('product_external_link_url'); ?>" target="<?php echo $link_target; ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+				<h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
 				<h2 class="source"><?php echo $this->__('Source:  ') ?><span><?php echo $_helper->productAttribute($_product, $_product->getSource(), 'source')?></span></h2> <!--adds "source" + label from attributes-->
-				<div class="external-inspiration"><?php echo $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration') ?></div> <!--adds "inspiration" from attributes-->
-					
+				
+				
+				<div class="external-inspiration">
+					<?php $maxLength = 200;
+					$inspiration= $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration');  
+					echo substr($inspiration, 0, $maxLength);
+					?>
+				</div> 
+
+
+<!--adds "inspiration" from attributes-->
+				 <div class="actions2">
+				<ul><a href="<?php echo $_productForExternalLink->getData('product_external_link_url'); ?>" target="<?php echo $link_target; ?>" class="website"><?php echo $this->__('Go to Website') ?></a></ul>
+				</div>
+				
 			</div>
 			
 			<?php				
@@ -124,123 +143,44 @@
 			
 			<div class="internal">
 				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="300" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
-                <h2 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></h2> <!--adds brand in category grid -->
+               <!-- <h2 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></h2> <!--adds brand in category grid -->
 				<h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
-				<div class="inspiration"><?php echo $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration') ?></div> <!--adds "inspiration" from attributes-->
-				
+				<!--<div class="inspiration"><?php echo $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration') ?></div> <!--adds "inspiration" from attributes-->
+				 
+				  <?php echo $this->getPriceHtml($_product, true) ?> 
+				  
+				  <div class="actions">
+                   <!-- <?php if($_product->isSaleable()): ?>
+                        <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                    <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                    <?php endif; ?>-->
+                    <div class="add-to-links">
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <ul><a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></ul>
+                        <?php endif; ?>
+                       <!-- <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
+                            <li><span class="separator">|</span> <a href="<?php echo $_compareUrl ?>" class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>-->
+                        <?php endif; ?>
+                    </div>
+                </div>
 			</div>
 	
 			<?php			
 				}
 			?>
-             
-			<!--end-->
-			
-              
-				
-            </div>
-										
-						
+            </li>
         <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
-
-    
-		
+        </ul>
         <?php endif ?>
         <?php endforeach ?>
-		
-
-		</div>
-
-
-		<script type="text/javascript"> 	
-	var jQuerycontainer = jQuery('.masonry-wrapper');
-jQuerycontainer.masonry({   itemSelector: '.item'})
-  
-
-jQuerycontainer.infinitescroll({
-    // infinite scroll options...
-	
-	navSelector  : ".toolbar",            
-                   // selector for the paged navigation (it will be hidden)
-    nextSelector : ".toolbar a.next",    
-                   // selector for the NEXT link (to page 2)
-    itemSelector : ".item",          
-                   // selector for all items you'll retrieve
-	loadingText : "<em>Loading More Inspiration...</em>",
-	
-	donetext: "<em>All Items Have Been Loaded</em>",
-	
-	loadingImg: "http://dev.marvilene.com/skin/frontend/marvilene/default/images/amshopby-overlay.gif",
-	
-	behavior : "magento",
-	
-	loadMsgSelector : ".loader",
-  },
-
-
-
- // trigger Masonry as a callback
- function( newElements ) {
-  var jQuerynewElems = jQuery( newElements ).css({ opacity: 0 });
-  // ensure that images load before adding to masonry layout
-  jQuerynewElems.imagesLoaded(function(){
-    jQuerynewElems.animate({ opacity: 1 });
-    jQuerycontainer.masonry( 'appended', jQuerynewElems, true ); 
-  });
-}
-);
-
-
-		</script>
-	<!--
-<script type="text/javascript"> 
-		
-jQuery(document).ready(function ($) {
-var $container = $('.masonry-wrapper');
-$container.masonry({   itemSelector: '.item'})
-
-    $container.infinitescroll({
-        'navSelector': ".toolbar",
-        'nextSelector': ".toolbar a.next:first",
-        'itemSelector': ".item",
-        'debug': true,
-        'loadingImg': "http://www.infinite-scroll.com/loading.gif",
-        'loadingText': "LA LA LA...",
-        'extraScrollPx': 150,
-        'doneText': "<em>Everything has been loaded.</em>",
-        'bufferPx': 100,
-		
-        'dataCallback': function (data, statusText, request) {
-	if (!$(this.nextSelector, data).length) {
-		if (this.almostDone) {
-			this.isDone = true;
-			this.almostDone = false;
-		} else {
-			this.almostDone = true;
-		}
-	}
-}
-   
-    }
-	
-);
-    
-});
-  	 		
-</script>-->
-	
-			
-			
-			
-			
-			
+        <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
-	 <div class="loader"></div>	<!--adds a container for jQuery infinite scroll to display its loader-->
+
     <div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
     </div>
 </div>
 <?php endif; ?>
 <div style="display:none" class="amshopby-overlay"><img src="<?php echo $this->getSkinUrl('images/amshopby-overlay.gif')?>" width="32" height="32"/></div>
-
-
+</div> <!--added to enable Amasty Ajax-->
