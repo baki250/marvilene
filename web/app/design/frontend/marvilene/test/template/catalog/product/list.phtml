@@ -43,17 +43,20 @@
 <div class="breadcrumb-wrapper"> <!--breadcrumbs above toolbar-->
 <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml() ?>
 <div class="counter"> <!-- item counter above toolbar-->
+
 <?php   
    $toolbar = $this->getToolbarBlock();  
    $toolbar->setCollection($_productCollection);  
    if($toolbar->getCollection()->getSize() > 0):  
       
-      echo $toolbar->__('Items %s - %s of %s total', $toolbar->getFirstNum(), $toolbar->getLastNum(), $toolbar->getTotalNum());  
+     /* echo $toolbar->__('Items %s - %s of %s total', $toolbar->getFirstNum(), $toolbar->getLastNum(), $toolbar->getTotalNum());  */
    endif;  
 ?>  
 </div>
 </div>
+<div class="toolbar-wrapper">
     <?php echo $this->getToolbarHtml() ?>
+	</div>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
     <?php $_iterator = 0; ?>
@@ -190,7 +193,10 @@
     itemSelector : ".products-grid",          
                    // selector for all items you'll retrieve
 	loadingText : "<em>Loading More Inspiration...</em>",
+	donetext: "<em>All Items Have Been Loaded</em>",
 	behavior : "magento",
+	loadMsgSelector : ".loader",
+	
    }
 );
 
