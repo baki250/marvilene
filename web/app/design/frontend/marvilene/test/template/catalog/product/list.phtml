@@ -43,17 +43,20 @@
 <div class="breadcrumb-wrapper"> <!--breadcrumbs above toolbar-->
 <?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml() ?>
 <div class="counter"> <!-- item counter above toolbar-->
+
 <?php   
    $toolbar = $this->getToolbarBlock();  
    $toolbar->setCollection($_productCollection);  
    if($toolbar->getCollection()->getSize() > 0):  
       
-      echo $toolbar->__('Items %s - %s of %s total', $toolbar->getFirstNum(), $toolbar->getLastNum(), $toolbar->getTotalNum());  
+     /* echo $toolbar->__('Items %s - %s of %s total', $toolbar->getFirstNum(), $toolbar->getLastNum(), $toolbar->getTotalNum());  */
    endif;  
 ?>  
 </div>
 </div>
+<div class="toolbar-wrapper">
     <?php echo $this->getToolbarHtml() ?>
+	</div>
     <?php // List mode ?>
     <?php if($this->getMode()!='grid'): ?>
     <?php $_iterator = 0; ?>
@@ -98,7 +101,7 @@
     <?php else: ?>
 
     <?php // Grid Mode ?>
-
+<div class="product-wrapper">
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
     <?php $i=0; foreach ($_productCollection as $_product): ?>
@@ -107,17 +110,49 @@
         <?php endif ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
 				
+				<?php
+				$_productForExternalLink = Mage::getModel('catalog/product')->load($_product->getId());
+				if (1 == $_productForExternalLink->getData('product_external_link')) {
+					$linkTargetAttributeObj = $_productForExternalLink->getResource()->getAttribute("product_external_link_target");
+					if ($linkTargetAttributeObj->usesSource()) {
+						$link_target = $linkTargetAttributeObj->getSource()->getOptionText($_productForExternalLink->getData('product_external_link_target'));
+					}
+			?>
+			
+			<div class="external">
+				<a href="<?php echo $_productForExternalLink->getData('product_external_link_url'); ?>" target="<?php echo $link_target; ?>"  title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
+				<h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+				<h2 class="source"><?php echo $this->__('Source:  ') ?><span><?php echo $_helper->productAttribute($_product, $_product->getSource(), 'source')?></span></h2> <!--adds "source" + label from attributes-->
 				
-                
+				
+				<div class="external-inspiration">
+					<?php $maxLength = 200;
+					$inspiration= $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration');  
+					echo substr($inspiration, 0, $maxLength);
+					?>
+				</div> 
+
+
+<!--adds "inspiration" from attributes-->
+				 <div class="actions2">
+				<ul><a href="<?php echo $_productForExternalLink->getData('product_external_link_url'); ?>" target="<?php echo $link_target; ?>" class="website"><?php echo $this->__('Go to Website') ?></a></ul>
+				</div>
+				
+			</div>
+			
+			<?php				
+				} else {
+			?>
+			
+			<div class="internal">
 				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(300); ?>" width="300" height="300" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
-                
-				<!--<h2 class="more_options"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_product->getAttributeText('more_options') ?></a></h2> --><!--adds options in category grid -->
-			<!--	<h2 class="manufacturer"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_product->getAttributeText('manufacturer') ?></a></h2> --><!--adds brand in category grid -->
-				<h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
-                
-				
-                <?php echo $this->getPriceHtml($_product, true) ?>
-                <div class="actions">
+               <!-- <h2 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></h2> <!--adds brand in category grid -->
+				<h2 class="product-name"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h2>
+				<!--<div class="inspiration"><?php echo $_helper->productAttribute($_product, nl2br($_product->getInspiration()), 'inspiration') ?></div> <!--adds "inspiration" from attributes-->
+				 
+				  <?php echo $this->getPriceHtml($_product, true) ?> 
+				  
+				  <div class="actions">
                    <!-- <?php if($_product->isSaleable()): ?>
                         <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
                     <?php else: ?>
@@ -132,14 +167,47 @@
                         <?php endif; ?>
                     </div>
                 </div>
+			</div>
+	
+			<?php			
+				}
+			?>
             </li>
         <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
         </ul>
         <?php endif ?>
         <?php endforeach ?>
+		
+		</div>
+		
         <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
-    <?php endif; ?>
+   
 
+ <script type="text/javascript">
+ jQuery('.product-wrapper').infinitescroll({
+ 
+    navSelector  : ".toolbar",            
+                   // selector for the paged navigation (it will be hidden)
+    nextSelector : ".toolbar a.next",    
+                   // selector for the NEXT link (to page 2)
+    itemSelector : ".products-grid",          
+                   // selector for all items you'll retrieve
+	loadingText : "<em>Loading More Inspiration...</em>",
+	donetext: "<em>All Items Have Been Loaded</em>",
+	behavior : "magento",
+	loadMsgSelector : ".loader",
+	
+   }
+);
+
+</script>
+
+
+
+
+
+   <?php endif; ?>
+<div class="loader"></div>	<!--adds a container for jQuery infinite scroll to display its loader-->
     <div class="toolbar-bottom">
         <?php echo $this->getToolbarHtml() ?>
     </div>

@@ -38,23 +38,22 @@
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 <?php echo $this->getChildHtml('after_body_start') ?>
 <div class="wrapper">
-    <?php echo $this->getChildHtml('global_notices') ?>    
+    <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
-     
-        <div class="main-container col2-left-layout">
+       
+        <div class="main-container col1-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
-		<?php echo $this->getChildHtml('titledesc') ?> <!--inserted for category picture-->
+					<?php echo $this->getChildHtml('titledesc') ?> <!--inserted for category picture-->
                 <div class="col-main">
                     <?php echo $this->getChildHtml('global_messages') ?>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-                <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
             </div>
         </div>
-        
+       
     </div>
-	<?php echo $this->getChildHtml('footer') ?>
+	 <?php echo $this->getChildHtml('footer') ?>
         <?php echo $this->getChildHtml('before_body_end') ?>
 </div>
 <?php echo $this->getAbsoluteFooter() ?>
