@@ -1,0 +1,40 @@
+<?php
+
+   // Iterate all categories in store
+   foreach ($this->getChildCategories(4) as $_childCategory):
+       
+       // If category is Active
+       if($_childCategory->getIsActive()):
+
+           // Load the actual category object for this category
+           $cur_category = Mage::getModel('catalog/category')->load($_childCategory->getId());
+			
+		   
+           // Load a random product from this category
+           $products = Mage::getResourceModel('catalog/product_collection')->addCategoryFilter($cur_category)->addAttributeToSelect('small_image');
+           $products->getSelect()->order(new Zend_Db_Expr('RAND()'))->limit(1);
+           
+           $products->load();
+           
+           // This a bit of a fudge - there's only one element in the collection
+           $_product = null;
+           foreach ( $products as $_product ) {}        
+           ?>
+           
+           <div style="float: left; padding-right: 30px; text-align: center;">
+               <div class="linkimage"><p><a href="<?php echo $this->getCategoryUrl($_childCategory)?>">
+           
+           <?php
+           if(isset($_product)):
+           ?>
+           <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135, 135); ?>" alt="<?php echo $_childCategory->getName()?>" title="<?php echo $_childCategory->getName()?>" />
+           <?php
+           endif;
+           ?>
+               </div>
+               <?php echo $_childCategory->getName()?></a></p>
+           </div>
+           <?php
+       endif;
+   endforeach;
+?>

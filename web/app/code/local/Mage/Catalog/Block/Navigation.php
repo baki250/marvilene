@@ -34,6 +34,32 @@
  */
 class Mage_Catalog_Block_Navigation extends Mage_Core_Block_Template
 {
+
+public function getChildCategories($categoryId) //inserted for random subcategories on category page
+		{
+			  $category = Mage::getModel('catalog/category');
+			  if($category->checkId($categoryId) === false) {
+				  return false;
+			  }
+			$layer = Mage::getSingleton('catalog/layer');
+			$category->load($categoryId);
+			$layer->setCurrentCategory($category);
+			/* @var $category Mage_Catalog_Model_Category */
+			$collection = Mage::getModel('catalog/category')->getCollection();
+			/* @var $collection Mage_Catalog_Model_Resource_Eav_Mysql4_Category_Collection */
+			$collection->addAttributeToSelect('url_key')
+				->addAttributeToSelect('name')
+				->addAttributeToSelect('is_anchor')
+				->addAttributeToFilter('is_active', 1)
+				->addIdFilter($category->getChildren())
+				->joinUrlRewrite()
+				->load();
+
+			//$productCollection = Mage::getResourceModel('catalog/product_collection');
+			//$layer->prepareProductCollection($productCollection);
+			//$productCollection->addCountToCategories($collection);
+			return $collection;
+		}
     protected $_categoryInstance = null;
 
     /**
