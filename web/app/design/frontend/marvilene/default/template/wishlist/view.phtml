@@ -47,7 +47,7 @@
                 <thead>
                     <tr>
                         <th class="wishlist-item"><?php echo $this->__('Product') ?></th>
-                       <!-- <th><?php echo $this->__('Comment') ?></th>-->
+                       <th class="comment"><?php echo $this->__('Comment') ?></th>
                         <th class="a-left"><span class="nobr"><?php echo $this->__('Added On') ?></span></th>
                         <th class="a-center"><span class="nobr"><?php echo $this->__('Add to Cart') ?></span></th>
                         <th>&nbsp;</th>
@@ -70,29 +70,12 @@
 								
                             <?php echo $this->getPriceHtml($product) ?>
                             <?php echo $this->getDetailsHtml($item) ?>
-							<?php if ($_options = $this->getOptionList()):?>
-        <dl class="item-options">
-            <?php foreach ($_options as $_option) : ?>
-            <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-            <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-            <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
-                <?php if (isset($_formatedOptionValue['full_view'])): ?>
-                <div class="truncated_full_value">
-                    <dl class="item-options">
-                        <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-                        <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
-                    </dl>
-                </div>
-                <?php endif; ?>
-            </dd>
-            <?php endforeach; ?>
-        </dl>
-        <?php endif;?>
+		
 							</div>
                         </td>
-                       <!-- <td>
+                       <td class="comment">
                             <textarea name="description[<?php echo $item->getWishlistItemId() ?>]" rows="3" cols="5" onfocus="focusComment(this)" onblur="focusComment(this)" title="<?php echo $this->__('Comment') ?>"><?php echo $this->getCommentValue($item); ?></textarea>
-                        </td>-->
+                        </td>
                         <td>
                             <span class="nobr"><?php echo $this->getFormatedDate($item->getAddedAt()) ?></span>
                         </td>

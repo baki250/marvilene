@@ -1348,9 +1348,14 @@ One Page Checkout*/
 #opc-review .authentication {  margin: 0 auto; width: 570px; }
 #opc-review .warning-message {  color: #222; font-weight: bold; text-align: center; padding: 10px 10px 0; }
 /*Multiple Addresses Checkout*/
+
+
 .checkout-progress {  padding: 0 90px; margin: 0 0 20px; }
 .checkout-progress li {  float: left; width: 19%; margin: 0 3px 0 0; border-top: 6px solid #999; padding: 2px 0 0; font-weight: bold; text-align: center; color: #888; }
-.checkout-progress li.active {  border-top-color: #E96200; color: #E96200; }
+.checkout-progress li.active {  border-top-color: #ec853d; color: #ec853d; }
+.multiple-checkout .title-buttons button.button span , .multiple-checkout .data-table  button.button span{  background: #adbc4f; border: 1px solid #c5be70;}
+.multiple-checkout .title-buttons button.button span span, .multiple-checkout .data-table  button.button span span  {border:none;}
+.multiple-checkout .title-buttons button.button:hover span, .multiple-checkout .data-table  button.button:hover span {  background: #c5be70;}
 .multiple-checkout h2 {  font-size: 12px; font-weight: bold; margin: 0 0 10px; }
 .multiple-checkout h3,
 .multiple-checkout h4 {  font-size: 12px; font-weight: bold; }
@@ -1371,7 +1376,7 @@ One Page Checkout*/
 .multiple-checkout .place-order .please-wait {  float: right; padding: 5px 10px 0 0; }
 .multiple-checkout .place-order .grand-total {  float: right; }
 .multiple-checkout .place-order .grand-total .inner {  }
-.multiple-checkout .place-order .grand-total big {  float: left; margin-right: 12px; font-size: 1.5em; font-weight: bold; line-height: 28px; color: #A01234; }
+.multiple-checkout .place-order .grand-total big {  float: left; margin-right: 12px; font-size: 1.5em; font-weight: bold; line-height: 28px; color: #000; }
 .multiple-checkout .place-order .grand-total div {  float: left; }
 /*Step 1*/
 #multiship-addresses-table td {  padding: 10px; }
@@ -1527,6 +1532,8 @@ Address Book*/
 .page-print .price-excl-tax .price,
 .page-print .price-incl-tax .price {  display: inline; }
 /*My Wishlist*/
+.my-wishlist .data-table td.comment { display: none;}
+.my-wishlist .data-table th.comment{ display: none; }
 .my-wishlist .data-table td {  padding: 10px; }
 .my-wishlist .data-table th.wishlist-item {width: 350px;}
 .my-wishlist .data-table td.wishlist-item {width: 350px;}
