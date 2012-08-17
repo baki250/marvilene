@@ -122,9 +122,8 @@ button.button span span {  background-position: 100% 0; border: none; }
 button.disabled span {  color: #BBB !important; }
 button.button:hover span {background: #ef9a60;}
 /*button.btn-cart span {}*/
-button.btn-checkout span {
-  background:transparent url(../images/bg_button_blk.gif) 0 0 no-repeat; height: 31px; color: #fff; line-height: 30px;} 
-button.btn-checkout span span {background-position:100% 0; padding:0 40px 0 34px; }
+button.btn-checkout span {font-size: 15px; padding: 10px 50px;} 
+button.btn-checkout span span {padding:0; }
 
 button.btn-checkout.no-checkout span {  background-position: 0 100%; color: #CFCFCF; }
 button.btn-checkout.no-checkout span span {  background-position: 100% 100%; }
@@ -369,7 +368,8 @@ Misc*/
 .links li.first {  padding-left: 0 !important; }
 .links li.last {  background: none !important; padding-right: 0 !important; }
 .link-cart {  font-weight: bold; color: #D62502; }
-.link-wishlist {  color: #444; }
+.link-wishlist {  color: #ec853d;  }
+.link-wishlist:hover {  color: #ef9a60;  }
 .link-reorder {  }
 .link-compare {  }
 .link-print { /*background:url(../images/i_print.gif) 0 2px no-repeat; padding:3px 0 3px 25px;*/
@@ -1133,7 +1133,7 @@ Product Tags*/
 .rss-table .link-rss {  display: block; line-height: 1.55; background-position: 0 4px; }
 /*=======================================================================================
 Shopping Cart =========================================================================*/
-.cart .page-title {  }
+.cart .page-title { margin: 10px 0;  }
 /*Checkout Types*/
 .cart .page-title .checkout-types {  display: none !important; }
 .cart .checkout-types .paypal-or {  margin: 0 8px; line-height: 2.3; }
@@ -1141,25 +1141,28 @@ Shopping Cart ==================================================================
 /*Shopping Cart Table*/
 .cart-table th {  padding: 2px 10px; }
 .cart-table td {  padding: 10px; }
-
+.cart-table img{ background: #fff; padding: 9px; border: 1px solid #ececec;}
 .cart-table .item-msg {  margin: 5px 0; font-size: 11px; font-weight: bold; color: #DF280A; }
 .cart-table tfoot td {  padding: 5px 10px; }
-.cart-table .btn-continue {  float: left; }
-.cart-table .btn-continue span {  background: none; padding: 0; font: normal 11px / 25px Arial, Helvetica, sans-serif; color: #A01234; text-transform: none; text-decoration: underline; }
-.cart-table .btn-continue:hover span {  text-decoration: none; }
-.cart-table .btn-update span {  }
+.cart-table .btn-continue {  float: left;  }
+.cart-table .btn-continue span {  background: none; padding: 0; font-size: 13px; color: #ec853d; text-transform: none; border: none; }
+.cart-table .btn-continue:hover span { color: #ef9160; background: none;}
+.cart-table .btn-update span {  padding: 0 30px;}
 /*Shopping Cart Collateral boxes*/
 .cart .cart-collaterals {  padding: 25px 0 0; }
-.cart .cart-collaterals .col2-set .col-1 {  width: 222px; }
+.cart .cart-collaterals .col2-set .col-1 {  width: 260px; }
 .cart .cart-collaterals .col2-set .col-2 {  width: 655px; background: #E6F7D7; }
-.cart .crosssell {  border: 1px solid #DDD; background: #F7F7F7; padding: 10px; }
-.cart .crosssell h2 {  font-size: 12px; font-weight: bold; }
-.cart .crosssell .product-image {  float: left; width: 75px; height: 75px; }
-.cart .crosssell .product-details {  margin-left: 85px; }
+.cart .crosssell {  width: 100%; border: 1px solid #DDD; background: #F7F7F7; padding: 10px; }
+.cart .crosssell h2 {  font-size: 12px; font-weight: bold; margin: 10px 0 30px; }
+.cart .crosssell .product-image {  float: left; width: 75px; height: 75px; padding: 9px; background: #fff; border: 1px solid #ececec;}
+.cart .crosssell .product-details {  margin-left: 110px; }
 
-.cart .crosssell li.item {  margin: 0 0 8px; padding-bottom: 5px; border-bottom: 1px solid #DDD; }
+.cart .crosssell li.item {  margin: 0 0 8px; padding: 10px 0; border-bottom: 1px solid #DDD; }
 .cart .crosssell li.last {  border-bottom: 0; padding-bottom: 0; margin: 0; }
 .cart .crosssell .link-compare {  font-weight: normal; }
+.cart .crosssell button.button span {padding: 0 10px;}
+
+
 .cart .no-crosssell {  width: 100%; overflow: hidden; }
 .cart .no-crosssell img {  display: block; margin: 0 0 10px; }
 /*Discount Codes & Estimate Shipping and Tax Boxes*/
@@ -1174,9 +1177,11 @@ Shopping Cart ==================================================================
 .cart .discount .buttons-set button.button,
 .cart .shipping .buttons-set button.button {  float: none; margin: 0; }
 .cart .discount .buttons-set button.button span,
-.cart .shipping .buttons-set button.button span {  font-size: 10px;  }
+.cart .shipping .buttons-set button.button span {  border: 1px solid #c5be70; background: #adbc4f;  }
+.cart .discount .buttons-set button.button:hover span,
+.cart .shipping .buttons-set button.button:hover span {  background: #c5be70;  }
 .cart .discount .buttons-set button.button span span,
-.cart .shipping .buttons-set button.button span span {  padding: 0 19px 0 10px; }
+.cart .shipping .buttons-set button.button span span {  border: none;}
 .cart .discount {  border-bottom: 1px solid #C0D2AF; }
 .cart .discount label {  font-weight: bold; color: #555; }
 .cart .discount .input-box {  width: 270px; }
@@ -1187,13 +1192,13 @@ Shopping Cart ==================================================================
 .cart .shipping .form-list input.input-text {  width: 264px; }
 .cart .shipping .form-list select {  width: 270px; }
 /*Shopping Cart Totals*/
-.cart .totals {  background: #FFF url(../images/bkg_cart-totals.gif) no-repeat 0 0; padding: 12px 0; }
+.cart .totals {  background: #fff;  padding: 12px 0; }
 .cart .totals table {  float: right; width: 400px; margin: 0 0 8px; }
 .cart .totals td {  padding: 0 0 0 15px; }
 .cart .totals tr.last td {  }
 .cart .totals tfoot td {  }
 .cart .totals tfoot th strong,
-.cart .totals tfoot td strong {  font-size: 14px; font-weight: bold; color: #A01234; }
+.cart .totals tfoot td strong {  font-size: 15px; font-weight: bold; color: #000; }
 .cart .totals .checkout-types {  font-size: 13px; padding: 4px 0; text-align: right; }
 .cart .totals .checkout-types li {  clear: both; margin: 0 0 5px; }
 /*Options Tool Tip*/
@@ -1323,7 +1328,7 @@ One Page Checkout*/
 .opc .allow .step-title .number {  }
 .opc .allow .step-title h2 {  color: #FFF; }
 .opc .allow .step-title a {  display: block; font-size: 10px; color: #FFF; text-transform: uppercase; }
-.opc .active .step-title {  background: #A01234; border-color: #A01234; border-top-color: #FFF; padding-bottom: 5px; color: #FFF; cursor: default; }
+.opc .active .step-title {  background: #ec853d; border-color: transparent; border-top-color: #FFF; padding-bottom: 5px; color: #FFF; cursor: default; }
 .opc .active .step-title .number {  }
 .opc .active .step-title h2 {  color: #FFF; }
 .opc .active .step-title a {  display: none; }

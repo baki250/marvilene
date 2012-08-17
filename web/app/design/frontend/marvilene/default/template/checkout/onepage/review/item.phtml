@@ -27,7 +27,7 @@
 <?php $_item = $this->getItem()?>
 <tr>
     <td>
-	<h3 class="manufacturer"><?php echo Mage::getModel('catalog/product')->load($this->getProduct()->getId())->getAttributeText('manufacturer'); ?></h3> <!--adds manufacturer in onepage checkout tab 5-->
+	<!--h3 class="manufacturer"><?php echo Mage::getModel('catalog/product')->load($this->getProduct()->getId())->getAttributeText('manufacturer'); ?></h3> <!--adds manufacturer in onepage checkout tab 5-->
 	<h3 class="product-name"><?php echo $this->htmlEscape($this->getProductName()) ?></h3>
         <?php if ($_options = $this->getOptionList()):?>
         <dl class="item-options">
