@@ -117,13 +117,13 @@ button.button::-moz-focus-inner {  padding: 0; border: 0; }
 button.button {  -webkit-border-fit: lines; }
 /*<- Safari & Google Chrome Fix*/
 button.button {  overflow: visible; width: auto; border: 0; padding: 0; margin: 0; background: transparent; cursor: pointer; }
-button.button span { float:left; height:28px; background:transparent url(../images/bkg_btn.png) 0 0 no-repeat; padding:0 0 0 6px; font:  11px / 25px Arial, Helvetica, sans-serif; text-transform:uppercase; text-align:center; white-space:nowrap; color:#0d0d0d; font-weight: bold; line-height: 27px;}
-button.button span span {  background-position: 100% 0; padding: 0 15px 0 9px; }
+button.button span { float:left; height:28px; background:#ec853d;; padding:0px 20px; font:  11px / 25px Arial, Helvetica, sans-serif; text-transform:capitalize; text-align:center; white-space:nowrap; color:#fff; font-weight: bold; line-height: 27px; border: 1px solid #ef9a60; border-radius: 5px;}
+button.button span span {  background-position: 100% 0; border: none; }
 button.disabled span {  color: #BBB !important; }
+button.button:hover span {background: #ef9a60;}
 /*button.btn-cart span {}*/
-button.btn-checkout span {
-  background:transparent url(../images/bg_button_blk.gif) 0 0 no-repeat; height: 31px; color: #fff; line-height: 30px;} 
-button.btn-checkout span span {background-position:100% 0; padding:0 40px 0 34px; }
+button.btn-checkout span {font-size: 15px; padding: 10px 50px;} 
+button.btn-checkout span span {padding:0; }
 
 button.btn-checkout.no-checkout span {  background-position: 0 100%; color: #CFCFCF; }
 button.btn-checkout.no-checkout span span {  background-position: 100% 100%; }
@@ -298,9 +298,9 @@ p.required {  font-size: 11px; text-align: right; color: #EB340A; }
 .data-table th a {  color: #FFF; }
 .data-table td {  padding: 3px 8px; }
 .data-table thead,
-.data-table thead tr {  background: #E9E9E9; }
+.data-table thead tr {  background: #eef0f1; }
 .data-table tfoot {  border-bottom: 1px solid #D9DDE3; }
-.data-table tfoot tr {  background-color: #F3F3F3 !important; }
+.data-table tfoot tr {  background-color: #eef0f1 !important; }
 .data-table tbody th {  padding: 3px 8px; font-size: 11px; font-weight: bold; text-transform: none; white-space: normal; }
 .data-table tbody th,
 .data-table tbody td {  border-bottom: 1px solid #D9DDE3; }
@@ -368,7 +368,8 @@ Misc*/
 .links li.first {  padding-left: 0 !important; }
 .links li.last {  background: none !important; padding-right: 0 !important; }
 .link-cart {  font-weight: bold; color: #D62502; }
-.link-wishlist {  background: url(../images/heart.png) no-repeat 2pt 0; padding: 3px 7px 0px 20px; color: #444; }
+.link-wishlist {  color: #ec853d;  }
+.link-wishlist:hover {  color: #ef9a60;  }
 .link-reorder {  }
 .link-compare {  }
 .link-print { /*background:url(../images/i_print.gif) 0 2px no-repeat; padding:3px 0 3px 25px;*/
@@ -471,6 +472,8 @@ box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102
 .quick-access  .form-search .button span {
     height: auto;
     padding: 0;
+	border: none;
+	border-radius: 0px;
 }
 .quick-access .form-search .button span span, #searchform .button span span {
     background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/search-button.png") no-repeat scroll center center #f5f6f7;
@@ -551,7 +554,7 @@ Style consistent throughout all nav levels*/
 =======================================================================================
 Sidebar ===============================================================================*/
 .block {  border: 1px solid #DDD; margin: 0 0 20px; line-height: 1.35; }
-.block .block-title {  border-bottom: 1px solid #DDD; background: #E7E7E7; padding: 2px 10px; }
+.block .block-title {  border-bottom: 1px solid #DDD; background: #eef0f1; padding: 2px 10px; }
 .block .block-title strong {  display: block; font: bold 12px / 1.5 Arial, Helvetica, sans-serif; text-transform: uppercase; color: #000; }
 .block .block-title strong span {  }
 .block .block-title a {  text-decoration: none !important; }
@@ -567,7 +570,7 @@ Sidebar ========================================================================
 .block .actions button.button {  float: right; }
 .block .empty {  margin: 0; }
 .block .price-box {  margin: 5px 0; }
-.block button.button span {  }
+.block button.button span { padding: 0px 10px; }
 /*.block li.odd { background-color:#f4f3f3; }
 .block li.even { background-color:#fafafa; }
 Mini Products List*/
@@ -815,6 +818,11 @@ Rating*/
 /********** < Product Prices*/
 .price {  white-space: nowrap !important; }
 
+/*No rreturns*/
+.returns, .shipping {font-size: 12px; font-weight: bold; margin: 20px 0;}
+
+
+
 .price-box .price {  font-size: 15px;  color: #444; }
 /*Regular price*/
 .regular-price {  margin: 0 ; }
@@ -885,25 +893,27 @@ Tier Prices*/
 .add-to-cart label {  float: left; margin-right: 5px; font-weight: bold; line-height: 25px; color: #000; }
 .add-to-cart .qty {  float: left; margin-right: 5px; }
 .add-to-cart button.button span  {
-  background:transparent url(../images/bg_button_blk.gif) 0 0 no-repeat; height: 31px; color: #fff; line-height: 30px;} 
-.add-to-cart button.button span span { background-position:100% 0; padding:0 15px 0 9px; }
-
-.add-to-cart button.button {  float: left; margin: -3px 0 0; }
+  background:#ec853d; border-radius: 5px; border: 1px solid #ef9a60; height: 31px; color: #fff; line-height: 30px; padding: 5px 45px;;font-size: 13px;} 
+.add-to-cart button.button span span { background-position:100% 0; padding:0; border: none;}
+.add-to-cart button.button:hover span  {background:#ef9a60; }
+.add-to-cart button.button {  float: left; margin: 20px 0 0; }
 .add-to-cart .paypal-logo {  clear: left; margin: 0; text-align: right; }
 .add-to-cart .paypal-logo .paypal-or {  clear: both; display: block; margin: 5px 60px 5px 0; }
 /*Add to Links + Add to Cart*/
 
 
 .add-to-box {  margin: 10px 0; background-color: #fff; border: 1px solid #e7e7e7;}
-.add-to-box .add-to-cart {  width: 300px; float: left; margin: 10px 0;   padding: 10px; text-align: right; }
+.add-to-box .add-to-cart {  width: 200px; float: left; margin: 10px 0;   padding: 10px; text-align: right; }
 .add-to-box .add-to-cart .paypal-logo {  float: left; }
-.add-to-box .or {  display: none !important; }
+.add-to-box .or {  }
 .add-to-box .add-to-links {  margin: 10px 0; text-align: right; }
 .add-to-box .add-to-links li .separator {  display: none !important; }
 .product-view {  }
-.product-shop {min-height: 370px;}
+.product-shop {min-height: 557px;}
 .product-shop h2 {color: #000;}
-.product-shop .price {color: #000;}
+.product-shop .price-box .regular-price .price {color: #000;font-size: 30px;}
+.product-shop .price-box .special-price .price {color: #000;font-size: 30px;}
+.product-shop .price-box .old-price .price {color: #000;font-size: 15px;}
 .product-essential {  padding: 0 0 25px; }
 .product-essential h2 {  font: bold 12px / 1.25 Arial, Helvetica, sans-serif; }
 .product-collateral {  }
@@ -935,17 +945,18 @@ Tier Prices*/
 .product-image-popup .image-label {  font-size: 12px; font-weight: bold; margin: 0 0 10px; color: #2F2F2F; }
 /*Product Shop*/
 .product-view .product-shop {  position: relative;float: right; width: 363px; }
-.col1-layout .product-view .product-shop {  float: right; width: 530px; background: #f5f5f5;padding: 15px; border: 1px solid #e4e4e4;}
+.col1-layout .product-view .product-shop {  float: right; width: 530px; background: #eef0f1;padding: 15px; border: 1px solid #e4e4e4;}
 .col3-layout .product-view .product-shop {  float: none; width: auto; }
 .product-view .product-shop .product-name {  margin: 0 0 5px; }
-.product-view .product-shop .product-name h1 { text-transform: capitalize; font:24px / 1.25 Arial, Helvetica, sans-serif; }
+.product-view .product-shop .product-name h1 { text-transform: capitalize; font-size: 30px; color: #000; }
 .product-view .product-shop .ratings {  position: inherit; margin: 10px 0; }
-.product-view .product-shop .availability {  margin: 10px 0; }
+.product-view .product-shop .availability { }
 .product-view .product-shop .short-description {  margin: 10px 0; }
 .product-view .product-shop .price-box {  margin: 10px 0; }
 .product-view .product-shop .widget {position: absolute; bottom:0;}
-.product-view .product-shop .add-to-links { width; 200px; float:right;  margin: 15px 10px 0 0;  text-align: right; padding: 10px 0;}
-.product-view .product-shop .add-to-links .link-wishlist{background: url(../images/heart.png) no-repeat 0 0; padding: 3px 7px 0px 20px; }
+.product-view .product-shop .add-to-links { width: 350px; float:left;  margin: 10px 0 0 0;  text-align: left; padding: 0 0 10px 10px;}
+.product-view .product-shop .add-to-links .link-wishlist{  font-size: 13px; font-weight: bold; color: #ec853d; }
+.product-view .product-shop .add-to-links .link-wishlist:hover {text-decoration: none; color: #ef9a60;}
 
 .product-view .product-shop .add-to-links li {  display: inline; margin-left: 12px; }
 .product-view .product-shop .add-to-links li .separator {  display: none !important; }
@@ -953,12 +964,12 @@ Tier Prices*/
 /*Additional Conetent*/
 .additional-content {  background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent;}
 .short-description { display: inline-block; float: right; width: 550px; background: #fff;padding: 10px 10px 10px 0; text-align: justify; text-justify: newspaper; font-size: 12px;  margin: 10px 0 0 0;}
-.short-description h2 {color: #000; font-size:16px; text-transform: uppercase; padding: 0 0 10px 0;  }
-.attributes { display: inline-block; width: 382px; float: left; padding: 10px; margin: 10px 0 0 0;  background: #f5f5f5; border: 1px solid #e4e4e4;}
-.attributes h2 {color: #000; font-size:16px; text-transform: uppercase; padding: 0 0 10px 0; }
-.attributes  th.label { white-space: nowrap;}
+.short-description h2 {color: #000; font-size:16px; text-transform: capitalize; padding: 0 0 10px 0;  }
+.attributes { display: inline-block; width: 382px; float: left; padding: 10px 10px 0 0 ; margin: 10px 0 0 0;  }
+.attributes h2 {color: #000; font-size:16px; text-transform: capitalize; padding: 0 0 10px 0; }
+.attributes  th.label { white-space: nowrap; text-transform: capitalize;}
 /*Product Options*/
-.product-options {  margin: 20px 0 0; padding: 0 15px 10px; background-color: #fff; border: 1px solid #DDD; position: relative; }
+.product-options {  margin: 0; padding: 0 0px 10px;  position: relative; }
 .product-options dt {  padding: 10px 0 0; font-weight: normal; }
 .product-options dt label {  font-weight: bold; color: #000;}
 .product-options dt label.required em {  color: #EB340A; margin-left: 5px; }
@@ -992,12 +1003,14 @@ Tier Prices*/
 .product-shop .product-options-bottom .price-box {  float: none; margin: 0; }
 .product-shop .product-options-bottom .price-label {  float: none; padding-right: 0; }
 .product-shop .product-options-bottom .price-tax {  float: none; }
-.product-shop .product-options-bottom .add-to-cart {  display: inline-block;  float: left; padding: 10px; margin: 10px 0;text-align: left; }
+.product-shop .product-options-bottom .add-to-cart {  width: 200px; display: inline-block;  float: left; padding: 10px; margin: 10px 0;text-align: left; }
 /*Grouped Product*/
 .product-view .grouped-items-table .price-box {  margin: 0; padding: 0; }
-.product-shop th {text-transform: capitalize; color: #000; font-size: 12px; font-weight: bold; }
+.product-view .grouped-items-table .price-box .price{  font-size: 13px;}
+.product-shop th {text-transform: capitalize; color: #000; font-size: 13px; font-weight: bold; }
 .product-shop th.label {text-transform: capitalize; }
-.product-shop td {color: #000;}
+.product-shop td {color: #000; font-size: 13px;}
+.product-view .grouped-items-table  {margin: 20px 0 0;}
 /*Product Tabs*/
 
 .product-tabs {  margin-bottom: 15px; border-bottom: 1px solid #000; background: #fff; }
@@ -1010,17 +1023,20 @@ Tier Prices*/
 .product-tabs li.active a:hover { }
 .product-tabs-content h2 {  display: none; font-size: 12px; font-weight: bold; }
 /*Mini Products Grid*/
-.upsell-attributes {position: relative; display: inline-block; float: left; width: 145px; height: 125px; padding: 20px 0 0; }
+.upsell-attributes {position: relative; display: inline-block; float: left; width: 145px; height: 125px; padding: 20px 0 0 10px; }
 .upsell-attributes .price-box {position: absolute; left: 10px; bottom: 10px; width: 100px;}
-.box-up-sell { background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent;}
-.box-up-sell h2{ font-weight: bold; color: #000; font-size:16px; text-transform: uppercase; padding: 20px 0 10px; }
+.box-up-sell { border-top: 1px solid #ececec;}
+.box-up-sell h2{ font-weight: bold; color: #000; font-size:16px; text-transform: capitalize; padding: 20px 0 10px; }
 .mini-products-grid {  width: 100%; }
-.mini-products-grid td { display: inline-block; margin-right: 10px;  width: 315px;}
-.mini-products-grid .product-image { width: 145px; display: inline-block; float: left; } 
+.mini-products-grid td { display: inline-block; margin-right: 0;  width: 315px; border: 5px solid transparent; -webkit-transition: all 0.35s ease;
+	-moz-transition:    all 0.35s ease;
+	-o-transition:      all 0.35s ease;}
+.mini-products-grid td:hover {border: 5px solid #eef0f1;}
+.mini-products-grid .product-image { width: 145px; display: inline-block; float: left;  } 
 
 .mini-products-grid .product-image img {}
 .mini-products-grid .product-name {  width: 145px; margin: 0 0 6px; overflow: hidden; line-height:1.0;}
-.mini-products-grid .product-name a {text-transform: uppercase;color: #2e2e2e; font-size: 10px; font-weight: bold; text-decoration: none; line-height:1.0; }
+.mini-products-grid .product-name a {text-transform: capitalize;color: #2e2e2e; font-size: 12px; font-weight: bold; text-decoration: none; line-height:1.0; }
 .mini-products-grid .product-name a:hover {  }
 
 .mini-products-grid td.empty {  }
@@ -1048,12 +1064,12 @@ Tier Prices*/
 .product-view .box-tags .form-add button.button span {  height: 23px; background-image: url(../images/bkg_btn-small.gif); line-height: 20px; }
 .product-view .box-tags .note {  margin: 2px 0 0; font-size: 10px; }
 /*Block: Reviews*/
-.review-toolbar {margin: 20px 0; background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent;}
+.review-toolbar {margin: 20px 0; border-top: 1px solid #ececec;}
 .review-toolbar .review-summary { width: 100px;}
 .review-toolbar .pager { }
 .review-toolbar .pager .limiter{  padding: 0;}
 .review-toolbar .pager .amount{ visibility: hidden;}
-.review-toolbar  h2 { font-weight: bold; color: #000; font-size:16px; text-transform: uppercase; height: 30px; line-height: 1.75; padding: 15px 0 0 0;}
+.review-toolbar  h2 { font-weight: bold; color: #000; font-size:16px; text-transform: capitalize; height: 30px; line-height: 1.75; padding: 15px 0 0 0;}
 
 
 .col-main .box-reviews { }
@@ -1117,7 +1133,7 @@ Product Tags*/
 .rss-table .link-rss {  display: block; line-height: 1.55; background-position: 0 4px; }
 /*=======================================================================================
 Shopping Cart =========================================================================*/
-.cart .page-title {  }
+.cart .page-title { margin: 10px 0;  }
 /*Checkout Types*/
 .cart .page-title .checkout-types {  display: none !important; }
 .cart .checkout-types .paypal-or {  margin: 0 8px; line-height: 2.3; }
@@ -1125,30 +1141,33 @@ Shopping Cart ==================================================================
 /*Shopping Cart Table*/
 .cart-table th {  padding: 2px 10px; }
 .cart-table td {  padding: 10px; }
-
+.cart-table img{ background: #fff; padding: 9px; border: 1px solid #ececec;}
 .cart-table .item-msg {  margin: 5px 0; font-size: 11px; font-weight: bold; color: #DF280A; }
 .cart-table tfoot td {  padding: 5px 10px; }
-.cart-table .btn-continue {  float: left; }
-.cart-table .btn-continue span {  background: none; padding: 0; font: normal 11px / 25px Arial, Helvetica, sans-serif; color: #A01234; text-transform: none; text-decoration: underline; }
-.cart-table .btn-continue:hover span {  text-decoration: none; }
-.cart-table .btn-update span {  }
+.cart-table .btn-continue {  float: left;  }
+.cart-table .btn-continue span {  background: none; padding: 0; font-size: 13px; color: #ec853d; text-transform: none; border: none; }
+.cart-table .btn-continue:hover span { color: #ef9160; background: none;}
+.cart-table .btn-update span {  padding: 0 30px;}
 /*Shopping Cart Collateral boxes*/
 .cart .cart-collaterals {  padding: 25px 0 0; }
-.cart .cart-collaterals .col2-set .col-1 {  width: 222px; }
-.cart .cart-collaterals .col2-set .col-2 {  width: 655px; background: #E6F7D7; }
-.cart .crosssell {  border: 1px solid #DDD; background: #F7F7F7; padding: 10px; }
-.cart .crosssell h2 {  font-size: 12px; font-weight: bold; }
-.cart .crosssell .product-image {  float: left; width: 75px; height: 75px; }
-.cart .crosssell .product-details {  margin-left: 85px; }
+.cart .cart-collaterals .col2-set .col-1 {  width: 260px; }
+.cart .cart-collaterals .col2-set .col-2 {  width: 655px; background: #eef0f1; }
+.cart .crosssell {  width: 100%; border: 1px solid #DDD; background: #eef0f1; padding: 10px; }
+.cart .crosssell h2 {  font-size: 12px; font-weight: bold; margin: 10px 0 30px; }
+.cart .crosssell .product-image {  float: left; width: 75px; height: 75px; padding: 9px; background: #fff; border: 1px solid #ececec;}
+.cart .crosssell .product-details {  margin-left: 110px; }
 
-.cart .crosssell li.item {  margin: 0 0 8px; padding-bottom: 5px; border-bottom: 1px solid #DDD; }
+.cart .crosssell li.item {  margin: 0 0 8px; padding: 10px 0; border-bottom: 1px solid #DDD; }
 .cart .crosssell li.last {  border-bottom: 0; padding-bottom: 0; margin: 0; }
 .cart .crosssell .link-compare {  font-weight: normal; }
+.cart .crosssell button.button span {padding: 0 10px;}
+
+
 .cart .no-crosssell {  width: 100%; overflow: hidden; }
 .cart .no-crosssell img {  display: block; margin: 0 0 10px; }
 /*Discount Codes & Estimate Shipping and Tax Boxes*/
 .cart .discount,
-.cart .shipping {  background: #E6F7D7; padding: 10px 0; margin: 0 12px; }
+.cart .shipping {  background: #eef0f1; padding: 10px 0; margin: 0 12px; }
 .cart .discount h2,
 .cart .shipping h2 {  float: left; width: 225px; font: normal 14px / 16px Arial, Helvetica, sans-serif; color: #3C3C3C; }
 .cart .discount .discount-form,
@@ -1158,9 +1177,11 @@ Shopping Cart ==================================================================
 .cart .discount .buttons-set button.button,
 .cart .shipping .buttons-set button.button {  float: none; margin: 0; }
 .cart .discount .buttons-set button.button span,
-.cart .shipping .buttons-set button.button span {  font-size: 10px;  }
+.cart .shipping .buttons-set button.button span {  border: 1px solid #c5be70; background: #adbc4f;  }
+.cart .discount .buttons-set button.button:hover span,
+.cart .shipping .buttons-set button.button:hover span {  background: #c5be70;  }
 .cart .discount .buttons-set button.button span span,
-.cart .shipping .buttons-set button.button span span {  padding: 0 19px 0 10px; }
+.cart .shipping .buttons-set button.button span span {  border: none;}
 .cart .discount {  border-bottom: 1px solid #C0D2AF; }
 .cart .discount label {  font-weight: bold; color: #555; }
 .cart .discount .input-box {  width: 270px; }
@@ -1171,13 +1192,13 @@ Shopping Cart ==================================================================
 .cart .shipping .form-list input.input-text {  width: 264px; }
 .cart .shipping .form-list select {  width: 270px; }
 /*Shopping Cart Totals*/
-.cart .totals {  background: #FFF url(../images/bkg_cart-totals.gif) no-repeat 0 0; padding: 12px 0; }
+.cart .totals {  background: #fff;  padding: 12px 0; }
 .cart .totals table {  float: right; width: 400px; margin: 0 0 8px; }
 .cart .totals td {  padding: 0 0 0 15px; }
 .cart .totals tr.last td {  }
 .cart .totals tfoot td {  }
 .cart .totals tfoot th strong,
-.cart .totals tfoot td strong {  font-size: 14px; font-weight: bold; color: #A01234; }
+.cart .totals tfoot td strong {  font-size: 15px; font-weight: bold; color: #000; }
 .cart .totals .checkout-types {  font-size: 13px; padding: 4px 0; text-align: right; }
 .cart .totals .checkout-types li {  clear: both; margin: 0 0 5px; }
 /*Options Tool Tip*/
@@ -1307,7 +1328,7 @@ One Page Checkout*/
 .opc .allow .step-title .number {  }
 .opc .allow .step-title h2 {  color: #FFF; }
 .opc .allow .step-title a {  display: block; font-size: 10px; color: #FFF; text-transform: uppercase; }
-.opc .active .step-title {  background: #A01234; border-color: #A01234; border-top-color: #FFF; padding-bottom: 5px; color: #FFF; cursor: default; }
+.opc .active .step-title {  background: #ec853d; border-color: transparent; border-top-color: #FFF; padding-bottom: 5px; color: #FFF; cursor: default; }
 .opc .active .step-title .number {  }
 .opc .active .step-title h2 {  color: #FFF; }
 .opc .active .step-title a {  display: none; }
@@ -1327,9 +1348,14 @@ One Page Checkout*/
 #opc-review .authentication {  margin: 0 auto; width: 570px; }
 #opc-review .warning-message {  color: #222; font-weight: bold; text-align: center; padding: 10px 10px 0; }
 /*Multiple Addresses Checkout*/
+
+
 .checkout-progress {  padding: 0 90px; margin: 0 0 20px; }
 .checkout-progress li {  float: left; width: 19%; margin: 0 3px 0 0; border-top: 6px solid #999; padding: 2px 0 0; font-weight: bold; text-align: center; color: #888; }
-.checkout-progress li.active {  border-top-color: #E96200; color: #E96200; }
+.checkout-progress li.active {  border-top-color: #ec853d; color: #ec853d; }
+.multiple-checkout .title-buttons button.button span , .multiple-checkout .data-table  button.button span{  background: #adbc4f; border: 1px solid #c5be70;}
+.multiple-checkout .title-buttons button.button span span, .multiple-checkout .data-table  button.button span span  {border:none;}
+.multiple-checkout .title-buttons button.button:hover span, .multiple-checkout .data-table  button.button:hover span {  background: #c5be70;}
 .multiple-checkout h2 {  font-size: 12px; font-weight: bold; margin: 0 0 10px; }
 .multiple-checkout h3,
 .multiple-checkout h4 {  font-size: 12px; font-weight: bold; }
@@ -1350,7 +1376,7 @@ One Page Checkout*/
 .multiple-checkout .place-order .please-wait {  float: right; padding: 5px 10px 0 0; }
 .multiple-checkout .place-order .grand-total {  float: right; }
 .multiple-checkout .place-order .grand-total .inner {  }
-.multiple-checkout .place-order .grand-total big {  float: left; margin-right: 12px; font-size: 1.5em; font-weight: bold; line-height: 28px; color: #A01234; }
+.multiple-checkout .place-order .grand-total big {  float: left; margin-right: 12px; font-size: 1.5em; font-weight: bold; line-height: 28px; color: #000; }
 .multiple-checkout .place-order .grand-total div {  float: left; }
 /*Step 1*/
 #multiship-addresses-table td {  padding: 10px; }
@@ -1373,8 +1399,11 @@ Account Login/Create Pages =====================================================
 .account-login .content h2 {  margin: 0 -10px 12px; background: #F1F1F1; padding: 2px 10px; font-size: 13px; line-height: 1.25; }
 .account-login .buttons-set {  }
 .account-create {  }
-/*Account Login/Create Pages ============================================================
-Remember Me Popup =====================================================================*/
+/*Account Login/Create Pages ============================================================*/
+#login-form button.button span {background: #ec853d; border: 1px solid #ef9a60; border-radius: 5px; padding: 0px 20px; color: #fff; }
+#login-form button.button span span {border: none; padding: 0; }
+#login-form button.button:hover span {background:#ef9a60;}
+/*Remember Me Popup =====================================================================*/
 .window-overlay {  background: url(../images/window_overlay.png) repeat; background: rgba(0, 0, 0, 0.35); position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: 990; }
 .remember-me label {  float: none; margin: 0 6px; }
 .remember-me-popup {  background: #FFF; border: 1px solid #888; border-bottom-color: #777; left: 50%; top: 50%; position: absolute; margin: -85px 0 0 -200px; width: 400px; text-align: left; -moz-box-shadow: 0 0 6px #999; -webkit-box-shadow: 0 0 6px #999; box-shadow: 0 0 6px #999; z-index: 1000; }
@@ -1388,6 +1417,16 @@ Remember Me Popup ==============================================================
 /*Remember Me Popup =====================================================================
 My Account =============================================================================*/
 .my-account .title-buttons .link-rss {  float: none; margin: 0; }
+.my-account .title-buttons button.button span {  background: #adbc4f; border: 1px solid #c5be70;}
+.my-account .title-buttons button.button span span{  border:none;}
+.my-account .title-buttons button.button:hover span {  background: #c5be70;}
+
+
+.my-account .buttons-set button.button span {  background: #adbc4f; border: 1px solid #c5be70;}
+.my-account .buttons-set button.button span span {  border:none;}
+.my-account .buttons-set button.button:hover span {  background: #c5be70;}
+
+.my-account .page-title { margin: 10px 0;}
 /********** < Dashboard*/
 .dashboard .welcome-msg {  margin: 0 8em 1.5em 0; }
 .dashboard .welcome-msg p {  margin: 0; }
@@ -1493,16 +1532,22 @@ Address Book*/
 .page-print .price-excl-tax .price,
 .page-print .price-incl-tax .price {  display: inline; }
 /*My Wishlist*/
+.my-wishlist .data-table td.comment { display: none;}
+.my-wishlist .data-table th.comment{ display: none; }
 .my-wishlist .data-table td {  padding: 10px; }
-.my-wishlist .product-image {  display: block; width: 113px; height: 113px; margin: 0 0 5px; }
+.my-wishlist .data-table th.wishlist-item {width: 350px;}
+.my-wishlist .data-table td.wishlist-item {width: 350px;}
+.my-wishlist .description {display: inline-block; float: right; width: 200px; text-align: left;}
+.my-wishlist .product-image {  display: inline-block; width: 113px; height: 113px; margin:0; padding: 9px; border: 1px solid #ececec; background: #fff;}
 .my-wishlist textarea {  display: block; width: 97%; height: 109px; }
 .my-wishlist .buttons-set {  border: 0; padding: 0; margin: 0 0 -3em; }
 .my-wishlist .buttons-set button.button {  float: none; }
-.my-wishlist .buttons-set .btn-add span,
-.my-wishlist .buttons-set .btn-share span {  }
+.my-wishlist .buttons-set .btn-add span,.my-wishlist .buttons-set .btn-share span , .my-wishlist .buttons-set .btn-update span{  background: #adbc4f; border: 1px solid #c5be70;}
+.my-wishlist .buttons-set .btn-add span span,.my-wishlist .buttons-set .btn-share span span, .my-wishlist .buttons-set .btn-update span span{   border: none;}
+.my-wishlist .buttons-set .btn-add:hover span,.my-wishlist .buttons-set .btn-share:hover span, .my-wishlist .buttons-set .btn-update:hover span{  background: #c5be70;}
 .my-wishlist .price-box {margin: 3px 0 6px 5px;;}
 .my-wishlist  button.button.btn-cart span  {
-  background:transparent url(../images/bg_button_blk.gif) 0 0 no-repeat; height: 31px; color: #fff; line-height: 30px;} 
+ padding: 5px 35px; font-size: 13px;} 
 .my-wishlist  button.button.btn-cart span span { background-position:100% 0; padding:0 15px 0 9px; }
 #wishlist-table .add-to-links {  white-space: nowrap; }
 /*My Tags*/
@@ -1761,10 +1806,10 @@ div .capty-image {height: 230px; width: 230px;}
 /*ABOUT US*/
 
 
-.about-box {position: relative; width: 100%; height: 100px; background:url("../images/dash-background.gif") repeat scroll left top transparent; margin: 0 0 20px 0; }
-.about-title {position: absolute; bottom: 0px;  right: 10px;}
-.about-title span {  font-weight: bold; font-size: 40px;  color: #2F2F2F; }
-.about-title span span {color: #000;}
+.about-box {position: relative; width: 100%; height: 30px;margin: 0 0 20px 0; }
+.about-title {float: left;}
+.about-title span {  font-weight: bold; font-size: 15px;  color: #2F2F2F; }
+
 
 /*FAQ*/
 .faq-container {padding: 10px; margin: 10px 0; background: #f5f5f5; border: 1px solid #e7e7e7;}

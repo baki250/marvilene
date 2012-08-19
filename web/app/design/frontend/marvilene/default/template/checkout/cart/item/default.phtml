@@ -36,7 +36,7 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 		<?php $_item = $this->getItem()?>
 			<a href="<?php echo $this->getProductUrl() ?>">
 			<?php $_product= Mage::getSingleton('catalog/product')->load($_item->getProductId()) ?>
-			<?php echo $_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product); ?>
+			<!--<?php echo $_product->getResource()->getAttribute('manufacturer')->getFrontend()->getValue($_product); ?>-->
 			</a>
 	</h2>
 
