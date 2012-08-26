@@ -46,9 +46,9 @@
             <col width="1" />
                 <thead>
                     <tr>
-                        <th><?php echo $this->__('Product') ?></th>
-                        <th><?php echo $this->__('Comment') ?></th>
-                        <th class="a-center"><span class="nobr"><?php echo $this->__('Added On') ?></span></th>
+                        <th class="wishlist-item"><?php echo $this->__('Product') ?></th>
+                       <th class="comment"><?php echo $this->__('Comment') ?></th>
+                        <th class="a-left"><span class="nobr"><?php echo $this->__('Added On') ?></span></th>
                         <th class="a-center"><span class="nobr"><?php echo $this->__('Add to Cart') ?></span></th>
                         <th>&nbsp;</th>
                     </tr>
@@ -60,18 +60,20 @@
                         $isVisibleProduct = $product->isVisibleInSiteVisibility();
                     ?>
                     <tr>
-                        <td>
+                        <td class="wishlist-item">
                             <a class="product-image" href="<?php echo $this->getProductUrl($item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>"><img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(113, 113); ?>" width="113" height="113" alt="<?php echo $this->escapeHtml($product->getName()) ?>" /></a>
 							
-							<h2 class="manufacturer"><a href="<?php echo $this->getProductUrl($item) ?>"><?php echo $product->getAttributeText('manufacturer') ?></a></h2> <!--adds brand in category grid -->
+							<!--<h2 class="manufacturer"><a href="<?php echo $this->getProductUrl($item) ?>"><?php echo $product->getAttributeText('manufacturer') ?></a></h2> <!--adds brand in category grid -->
 							
-                            <h2 class="product-name"><a href="<?php echo $this->getProductUrl($item) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a></h2>
+                            <div class="description"><h2 class="product-name"><a href="<?php echo $this->getProductUrl($item) ?>"><?php echo $this->escapeHtml($product->getName()) ?></a></h2>
 							
 								
                             <?php echo $this->getPriceHtml($product) ?>
                             <?php echo $this->getDetailsHtml($item) ?>
+		
+							</div>
                         </td>
-                        <td>
+                       <td class="comment">
                             <textarea name="description[<?php echo $item->getWishlistItemId() ?>]" rows="3" cols="5" onfocus="focusComment(this)" onblur="focusComment(this)" title="<?php echo $this->__('Comment') ?>"><?php echo $this->getCommentValue($item); ?></textarea>
                         </td>
                         <td>

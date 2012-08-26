@@ -54,7 +54,7 @@
         <div class="product-shop">
 		<?php echo $this->getChildHtml('alert_urls') ?> <!--pin it button block-->
             <div class="product-name">
-				<h1 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></a></h1> <!--adds brand in category grid -->
+				<!--<h1 class="manufacturer"><?php echo $_product->getAttributeText('manufacturer') ?></h1>--> <!--adds brand in category grid -->
                 <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
             </div>
 
@@ -72,8 +72,8 @@
                 <div class="add-to-box">
                     <?php if($_product->isSaleable()): ?>
                         <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                            <span class="or"><?php echo $this->__('OR') ?></span>
+                       <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+                           <!-- <span class="or"><?php echo $this->__('OR') ?></span>-->
                         <?php endif; ?>
                     <?php endif; ?>
                     <?php echo $this->getChildHtml('addto') ?>
@@ -83,6 +83,7 @@
 			     <?php echo $this->getChildHtml('extrahint') ?>
 			
             <?php if ($_product->isSaleable() && $this->hasOptions()):?> <!--block calls for configurable product options and add-to-cart button -->
+		
 			<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
 			<?php endif;?>
 

@@ -50,13 +50,17 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>varien/js.js</script></action>
                 <action method="addJs"><script>varien/form.js</script></action>
                 <action method="addJs"><script>varien/menu.js</script></action>
-                <action method="addJs"><script>mage/cookies.js</script></action> <!-- These are merged into merged/merged.js -->
+                <action method="addJs"><script>mage/cookies.js</script></action> 
+				   <action method="addJs"><script>infinite_scroll/jquery.infinitescroll.js</script></action> <!--infinite scroll-->   
+				<action method="addJs"><script>infinite_scroll/behaviors/strategery-magento.js</script></action> <!--infinte scroll magento behavior-->
+				
+				
                 <!--action method="addJs"><script>mage/translate.js</script></action--> <!-- US only site, not needed -->
                 <!--action method="addJs"><script>merged/merged-js.js</script></action-->
 
                 <action method="addCss"><stylesheet>css/styles.css</stylesheet></action>
                 <action method="addItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
-                <action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>
+                <!--<action method="addCss"><stylesheet>css/widgets.css</stylesheet></action>-->
                 <action method="addCss"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
 
                 <action method="addItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
