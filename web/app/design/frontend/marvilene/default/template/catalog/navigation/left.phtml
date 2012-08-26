@@ -30,9 +30,6 @@
  * @see Mage_Catalog_Block_Navigation
  */
 ?>
-<div class="stuff">
-<strong><span><?php echo $this->__('Browse By') ?></span></strong>
-</div>
 <?php if (!Mage::registry('current_category')) return ?>
 <?php $_categories = $this->getCurrentChildCategories() ?>
 <?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
