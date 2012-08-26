@@ -591,17 +591,17 @@ Mini Products List*/
 .block-currency .block-content {  padding: 0 10px 12px; }
 .block-currency .block-content select {  width: 100%; padding: 0; }
 /*Block: Layered Navigation*/
-.block-layered-nav {  border: 1px solid #e7e7e7;   margin: 36px 0 0 0; }
+.block-layered-nav {  border: 1px solid #e7e7e7;   margin: 10px 0 0 0; }
 .block-layered-nav .block-title {  border: 0; padding: 0; margin: 0; height: 0; text-indent: -999em; overflow: hidden; }
 .block-layered-nav .block-content {  padding: 0; }
-.block-layered-nav .block-subtitle {  margin: 0; background: #eeeeee;  font-size: 12px; font-weight: bold; padding: 4px 5px; color: #2e2e2e; height:19px; line-height: 2; }
+.block-layered-nav .block-subtitle {  margin: 0; background: #f2f3f4;  font-size: 12px; font-weight: bold; padding: 4px 5px; color: #2e2e2e; height:19px; line-height: 2; }
 
 .block-layered-nav dt {  font-weight: bold; border-top: 1px solid #FFF; padding: 5px 0px 5px 20px; font-size: 12px; }
 .block-layered-nav dd {  padding: 0 20px 5px; border-botoldtom: 1px solid #DDD; }
 .block-layered-nav dd li {  line-height: 1.35; margin: 0 0 3px; }
 .block-layered-nav dd a {  color: #444; }
 .block-layered-nav .currently ol {  padding: 6px 0 0;  }
-.block-layered-nav .currently li {  padding: 2px 20px; color:#ED3897;}
+.block-layered-nav .currently li {  padding: 2px 20px; color:#ec853d; font-weight: bold; }
 .block-layered-nav .currently .label {  font-weight: bold; color:#444;}
 .block-layered-nav .currently .btn-remove {  margin: 2px 0 0; }
 .block-layered-nav .actions {  padding: 5px 10px; margin: 0; }
@@ -921,7 +921,7 @@ Tier Prices*/
 .product-collateral .box-collateral {  }
 /*Product Images*/
 
-.product-view .product-img-box {  float: left; width: 400px; }
+.product-view .product-img-box {  float: left; width: 402px; }
 .col3-layout .product-view .product-img-box {  float: none; margin: 0 auto; }
 .product-view .product-img-box .product-image {  margin: 0 0 10px; border: 1px solid #CACACA; }
 .product-view .product-img-box .product-image-zoom {  position: relative; width: 300px; height: 300px; overflow: hidden; z-index: 9; }
@@ -935,9 +935,9 @@ Tier Prices*/
 .product-view .product-img-box .zoom .btn-zoom-out {  position: absolute; left: 10px; top: 7px; }
 .product-view .product-img-box .zoom .btn-zoom-in {  position: absolute; right: 10px; top: 7px; }
 .product-view .product-img-box .more-views h2 {  font-size: 10px; font-weight: normal; padding: 0 0 2px; border-bottom: 1px solid #CCC; margin: 0 0 8px; text-transform: uppercase; }
-.product-view .product-img-box .more-views ul {  margin-left: -10px; }
-.product-view .product-img-box .more-views li {  float: left; margin: 0 0 8px 12px; }
-.product-view .product-img-box .more-views li a {  float: left; width: 66px; height: 66px; border: 1px solid #DDD; overflow: hidden; }
+.product-view .product-img-box .more-views ul {  margin-left: -14px; }
+.product-view .product-img-box .more-views li {  float: left; margin: 0 0 8px 16px; }
+.product-view .product-img-box .more-views li a {  float: left; width: 120px; height: 120px; border: 1px solid #DDD; overflow: hidden; }
 .product-image-popup {  margin: 0 auto; }
 .product-image-popup .buttons-set {  float: right; clear: none; border: 0; margin: 0; padding: 0; }
 .product-image-popup .nav {  font-weight: bold; margin: 0 100px; text-align: center; }
@@ -1987,7 +1987,7 @@ padding: 0pt 10px 10px 0pt; float: left;
 
 div.block-layered-nav dd a {padding:0px 5px 0px 0px; display:block; float: left;}  
 div.block-layered-nav dd a.amshopby-attr {padding-left:15px; background:transparent url(../images/amshopby_empty.gif) no-repeat; background-position: 0px 3px;} 
-div.block-layered-nav dd a.amshopby-attr-selected {font-weight: bold; padding-left:15px; background:transparent url(../images/amshopby_selected1.gif) no-repeat; background-position: 0px 3px;} 
+div.block-layered-nav dd a.amshopby-attr-selected {font-weight: bold; padding-left:15px; background:transparent url(../images/amshopby_selected_orange.gif) no-repeat; background-position: 0px 3px;} 
 div.block-layered-nav dd a img {padding: 0px 4px 5px; float:left;} 
 
 div.block-layered-nav dd li.amshopby-cat-level-2 {padding-left:20px;}
@@ -2004,8 +2004,8 @@ clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
 
 
 
-div.block-layered-nav dt {cursor:pointer; background:url(../images/amshopby-right.gif) 5px 8px no-repeat;background-color: #f5f5f5; border-top: 1px solid #e7e7e7;border-bottom: 1px solid #e7e7e7;}
-div.block-layered-nav dt.amshopby-collapsed {background:url(../images/amshopby-collapsed.gif) 5px 8px no-repeat; background-color: #eee;}
+div.block-layered-nav dt {cursor:pointer; background:url(../images/amshopby-right.gif) 5px 8px no-repeat;background-color: transparent; }
+div.block-layered-nav dt.amshopby-collapsed {background:url(../images/amshopby-collapsed.gif) 5px 8px no-repeat; background-color: transparent;}
 
 
 div.block-layered-nav div.slider {position:relative; margin:0 auto 5px auto; z-index:9; height:18px;  background: url(../images/amshopby-slider-bg.gif) no-repeat 50% 50%; cursor:pointer;}
@@ -2047,10 +2047,10 @@ div.amshopby-overlay img {
     position: absolute;
 }
 /*review page*/
-.product-view .product-review { min-height: 75px; width: 370px; background: #f5f5f5;padding: 15px; margin-bottom: 10px; border: 1px solid #e4e4e4; }
+.product-view .product-review { min-height: 50px; width: 370px; background: #eef0f1;padding: 15px; margin-bottom: 10px; border: 1px solid #e4e4e4; }
 
 .product-view .product-review .product-name {  margin: 0 0 5px; }
-.product-view .product-review .product-name h1 { text-transform: capitalize; font:20px Arial, Helvetica, sans-serif;}
+.product-view .product-review .product-name h1 { text-transform: capitalize; font:20px Arial, Helvetica, sans-serif;color: #000;}
 .product-view .product-review .ratings {  position: inherit; margin: 10px 0; }
 
 .product-view .review-img-box {  float: left; width: 402px; }
@@ -2058,7 +2058,7 @@ div.amshopby-overlay img {
 .product-view .review-img-box .product-image {  padding: 50px; border: 1px solid #CACACA; }
 
 .form-add { width: 550px; padding: 15px 10px 10px; float: right;}
-.form-add fieldset {margin-top: 75px;}
+.form-add fieldset {margin-top: 50px;}
 .form-add .form-list .input-box {  display: block; clear: both; width: 550px; }
 .form-add .form-list textarea {  width: 550px; height: 215px; }
 .form-add .buttons-set { border-top: none; margin:0; }
