@@ -12,11 +12,11 @@
 <layout>
     <default>
         <reference name="head">
-            <action method="addItem">
+           <!-- Not needed, added to styles.css <action method="addItem">
                 <type>skin_css</type>
                 <name>css/ecommerceteam/cloud-zoom.css</name>
-            </action>
-            <action method="addJs"><script>jquery/jquery-1.4.2.min.js</script></action>
+            </action> -->
+            <!-- Not needed, we have 1.6.2 jquery <action method="addJs"><script>jquery/jquery-1.4.2.min.js</script></action> -->
             <action method="addJs"><script>ecommerceteam/cloud-zoom.1.0.2.min.js</script></action>
         </reference>
     </default>

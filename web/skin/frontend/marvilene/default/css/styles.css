@@ -476,7 +476,7 @@ box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102
 	border-radius: 0px;
 }
 .quick-access .form-search .button span span, #searchform .button span span {
-    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/search-button.png") no-repeat scroll center center #f5f6f7;
+    background: url("../images/search-button.png") no-repeat scroll center center #f5f6f7;
 	border: 1px solid #c3c3c3;
     display: inline-block;
     height: 31px;
@@ -487,7 +487,7 @@ box-shadow: inset 0 0 1px 1px rgba(102, 98, 95, 0.12),inset 0 1px 1px 0 rgba(102
     padding: 0;
 }
 /*.header .form-search .button:hover span span {
-    background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-orange.png") no-repeat scroll center center #0d0d0d;
+    background: url("../images/arrow-orange.png") no-repeat scroll center center #0d0d0d;
 }*/
 .quick-access .form-search .search-autocomplete ul {
     background-color: #FFFFFF;
@@ -962,7 +962,7 @@ Tier Prices*/
 .product-view .product-shop .add-to-links li .separator {  display: none !important; }
 .product-view .product-shop .product-options-bottom .paypal-logo {  float: left; }
 /*Additional Conetent*/
-.additional-content {  background:url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/checkerboard.gif") repeat-x scroll left top transparent;}
+.additional-content {  background:url("../images/checkerboard.gif") repeat-x scroll left top transparent;}
 .short-description { display: inline-block; float: right; width: 550px; background: #fff;padding: 10px 10px 10px 0; text-align: justify; text-justify: newspaper; font-size: 12px;  margin: 10px 0 0 0;}
 .short-description h2 {color: #000; font-size:16px; text-transform: capitalize; padding: 0 0 10px 0;  }
 .attributes { display: inline-block; width: 382px; float: left; padding: 10px 10px 0 0 ; margin: 10px 0 0 0;  }
@@ -1120,11 +1120,13 @@ Product Tags*/
 .cms-home .subtitle {  }
 .cms-index-index .subtitle {  }
 /*Sitemap*/
-.page-sitemap .links {  text-align: right; margin: 0 8px -22px 0; }
+.page-sitemap .pager .amount {padding: 0; position: relative;}
+.page-sitemap .pager .pages {margin: -3px 0 0; }
+.page-sitemap .links {  text-align: right; float: right; width: 200px;  }
 .page-sitemap .links a {  text-decoration: none; position: relative; }
 .page-sitemap .links a:hover {  text-decoration: underline; }
 .page-sitemap .sitemap {  margin: 12px; }
-.page-sitemap .sitemap a {  color: #444; }
+.page-sitemap .sitemap a {  color: #444;text-transform: capitalize;  }
 .page-sitemap .sitemap li {  margin: 3px 0; }
 .page-sitemap .sitemap li.level-0 {  margin: 10px 0 0; font-weight: bold; }
 .page-sitemap .sitemap li.level-0 a {  color: #4F8100; }
@@ -1758,7 +1760,7 @@ height: 400px;
 .ads-row #other.curated-item{ margin: 0px 21px 20px 0;}
 
 div.capty-caption {
-	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 95% 40% #0d0d0d;
+	background: url("../images/arrow-white.png") no-repeat scroll 95% 40% #0d0d0d;
 	color: #FFF;
 	font: bold 12px arial;
 	text-transform: uppercase;
@@ -1821,7 +1823,7 @@ div .capty-image {height: 230px; width: 230px;}
 	height: 30px; 
 	opacity: 0.87; 
 	bottom:0; 	
-	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #0d0d0d; 
+	background: url("../images/arrow-white.png") no-repeat scroll 85% 50% #0d0d0d; 
 	color: white; 
 	font: bold 12px arial;
 	text-transform: uppercase; 
@@ -1868,7 +1870,7 @@ border: 1px solid #ef9a60;
  
 
 .ads-row #last.curated-item:hover .caption, .ads-row #other.curated-item:hover .caption  {
-	background: url("http://dev.marvilene.com/skin/frontend/marvilene/default/images/arrow-white.png") no-repeat scroll 85% 50% #ec853d;
+	background: url("../images/arrow-white.png") no-repeat scroll 85% 50% #ec853d;
 	
 }
         
@@ -2063,4 +2065,49 @@ div.amshopby-overlay img {
 .form-add .form-list textarea {  width: 550px; height: 215px; }
 .form-add .buttons-set { border-top: none; margin:0; }
 .review-left {width:400px;float: left;}
+
+/*Cloud Zoom */
+
+/* This is the moving lens square underneath the mouse pointer. */
+.cloud-zoom-lens {
+    border: 4px solid #888;
+    margin:-4px;    /* Set this to minus the border thickness. */
+    background-color:#fff;
+    cursor:move;
+}
+
+/* This is for the title text. */
+.cloud-zoom-title {
+    font-family:Arial, Helvetica, sans-serif;
+    position:absolute !important;
+    background-color:#000;
+    color:#fff;
+    padding:3px;
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+    font-size:10px;
+    top:0px;
+}
+
+/* This is the zoom window. */
+.cloud-zoom-big {
+    border:4px solid #ccc;
+    overflow:hidden;
+}
+
+/* This is the loading message. */
+.cloud-zoom-loading {
+    color:white;
+    background:#222;
+    padding:3px;
+    border:1px solid #000;
+}
+
+.product-image .mousetrap {
+    z-index:100 !important;
+}
+/*END Cloud Zoom*/
+
+
 /*=======================================================================================*/

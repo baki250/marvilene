@@ -35,6 +35,7 @@ Default layout, loads most of the pages
         <block type="page/html" name="root" output="toHtml" template="page/2columns-left.phtml">
 
             <block type="page/html_head" name="head" as="head">
+                <!-- TODO: Consolidate JS files along jquery / other / prototype divisions -->
             	<action method="addJs"><script>pronav/jquery.1.6.4.min.js</script></action>
 				<action method="addJs"><script>slidesjs/slides.min.jquery.js</script></action>
 				<action method="addJs"><script>Capty/jquery.capty.min.js</script></action>
@@ -51,10 +52,9 @@ Default layout, loads most of the pages
                 <action method="addJs"><script>varien/form.js</script></action>
                 <action method="addJs"><script>varien/menu.js</script></action>
                 <action method="addJs"><script>mage/cookies.js</script></action> 
-				   <action method="addJs"><script>infinite_scroll/jquery.infinitescroll.js</script></action> <!--infinite scroll-->   
+				<action method="addJs"><script>infinite_scroll/jquery.infinitescroll.js</script></action> <!--infinite scroll-->   
 				<action method="addJs"><script>infinite_scroll/behaviors/strategery-magento.js</script></action> <!--infinte scroll magento behavior-->
-				
-				
+								
                 <!--action method="addJs"><script>mage/translate.js</script></action--> <!-- US only site, not needed -->
                 <!--action method="addJs"><script>merged/merged-js.js</script></action-->
 
